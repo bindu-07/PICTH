@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:tag="layout/fragment_forgot_password_three_0"
+    app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
+    app:layout_constraintStart_toStartOf="@+id/tv_login_services"
+    app:layout_constraintTop_toBottomOf="@+id/tv_login_services">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_16sdp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/label_new_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="bottom"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="@string/label_enter_new_password"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_new_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:alpha="0.5"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="bottom"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="@string/label_new_password"
+            android:textColor="@color/white"
+            android:textFontWeight="300"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_new_password" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_new_password"
+            style="@style/CustomInputLayoutPadding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:boxStrokeErrorColor="@color/yellow"
+            app:errorIconTint="@color/yellow"
+            app:errorTextColor="@color/yellow"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_new_password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_new_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/label_enter_password_new"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:tag="binding_1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_white_50"
+                android:textCursorDrawable="@color/white"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
+                app:layout_constraintStart_toStartOf="@+id/tv_login_services"
+                app:layout_constraintTop_toBottomOf="@+id/label_password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/view_new_password"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:alpha="0.5"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_new_password" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_confirm_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:alpha="0.5"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="bottom"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="@string/label_confirm_password"
+            android:textColor="@color/white"
+            android:textFontWeight="300"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_new_password" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_confirm_password"
+            style="@style/CustomInputLayoutPadding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:boxStrokeErrorColor="@color/yellow"
+            app:errorIconTint="@color/yellow"
+            app:errorTextColor="@color/yellow"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_confirm_password"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/label_enter_password_confirm"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:tag="binding_2"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_white_50"
+                android:textCursorDrawable="@color/white"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
+                app:layout_constraintStart_toStartOf="@+id/tv_login_services"
+                app:layout_constraintTop_toBottomOf="@+id/label_password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:id="@+id/view_confirm_password"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:alpha="0.5"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_confirm_password" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_reset_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:padding="@dimen/_1sdp"
+            android:tag="binding_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_confirm_password">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_button_bg"
+                app:layout_constraintHorizontal_bias="0.333"
+                 />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/label_confirm_password"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_sign_in"
+                app:layout_constraintEnd_toEndOf="@+id/img_sign_in"
+                app:layout_constraintStart_toStartOf="@+id/img_sign_in"
+                app:layout_constraintTop_toTopOf="@+id/img_sign_in"
+                app:textAllCaps="true" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_reset_password">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_already_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text="@string/label_already_account"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
+                app:layout_constraintTop_toBottomOf="@+id/view_password" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/label_login_now"
+                android:textColor="@color/yellow"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
+                app:layout_constraintTop_toBottomOf="@+id/view_password" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

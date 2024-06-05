@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_register"
+    app:startDestination="@+id/registrationFragmentTwo">
+    <fragment
+        android:id="@+id/registrationFragmentTwo"
+        android:name="com.photo.picth.models.register.RegistrationFragmentTwo"
+        android:label="fragment_registration_two">
+        <action
+            android:id="@+id/action_registrationFragmentTwo_to_registrationFragmentThree"
+            app:destination="@+id/registrationFragmentThree"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragmentThree"
+        android:name="com.photo.picth.models.register.RegistrationFragmentThree"
+        android:label="fragment_registration_three" />
+</navigation>
