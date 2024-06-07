@@ -412,6 +412,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_gender">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_button_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="1dp" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -419,8 +429,10 @@
                 android:text="@string/label_send_otp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp"
-                tools:layout_editor_absoluteX="167dp"
-                tools:layout_editor_absoluteY="8dp" />
+                app:layout_constraintBottom_toBottomOf="@+id/img_sign_in"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/img_sign_in" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout

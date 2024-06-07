@@ -13,19 +13,63 @@
         android:theme="@style/Theme.AppCompat"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.bannerscreen.WelcomeBannerInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.bannerscreen.RankBannerInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.bannerscreen.MeetingBannerInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.bannerscreen.CloseBannerInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.bannerscreen.CashBannerInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.bannerscreen.CappingBannerInputActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.music.OnlineMusicListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activities.bannerscreen.BonanzaBannerInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.bannerscreen.BirthdayAnniversaryBannerInputActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activities.bannerscreen.AchievementBannerInputActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.others.ViewBannerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.auth.ContactUsActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.activities.home.BaseActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activities.others.SplashActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.activities.others.NoInternetActivity"
             android:exported="false" />
@@ -34,11 +78,10 @@
             android:exported="false" />
         <activity
             android:name=".ui.activities.auth.RegisterActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.activities.auth.LoginActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ui.activities.home.MainActivity"
             android:exported="true" />

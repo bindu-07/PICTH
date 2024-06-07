@@ -1,0 +1,1749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:tag="layout/activity_meeting_banner_input_0">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_background_512" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_upper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingStart="0dp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_banner_top"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:src="@drawable/ic_meeting_input"
+                    app:layout_constraintStart_toStartOf="@+id/iv_back"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_info"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:alpha="0.5"
+                    android:src="@drawable/ic_info"
+                    app:layout_constraintBottom_toTopOf="@+id/iv_banner_top"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_fill_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/label_fill_up"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_info"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_info" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_banner_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:tag="binding_1"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_info"
+                    app:layout_constraintTop_toBottomOf="@+id/label_fill_up" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/label_achiever_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/label_achiever_details"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_info"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_banner_category" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="@drawable/bg_login"
+                android:paddingBottom="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_upper"
+                app:layout_constraintVertical_bias="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_top_uplines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_top_uplines_inside"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:background="@drawable/bg_login"
+                        android:paddingStart="@dimen/_4sdp"
+                        android:paddingEnd="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_top_uplines"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/iv_add_image"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_add_image"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingEnd="0dp"
+                            android:src="@drawable/ic_add_yellow"
+                            android:tag="binding_2"
+                            app:layout_constraintBottom_toBottomOf="@+id/rv_top_uplines"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/rv_top_uplines" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_top_uplines"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_minus12sdp"
+                        android:background="@drawable/bg_white_rounded_rect"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/label_top_uplines"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/cl_top_uplines_inside"
+                        app:layout_constraintStart_toStartOf="@+id/cl_top_uplines_inside" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_achiever_details_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_top_uplines">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_achiever_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/bg_team_self"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingRight="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_achiever_details_inside"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_25sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_team_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_team_name"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_team_name"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_team_name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_team_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_name"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_3"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_default_custom_buttons"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_achiever_details_inside">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_default_team_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_team_self"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:padding="@dimen/_8sdp"
+                                android:tag="binding_4"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:textAllCaps="true" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_custom_team_name"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_team_self"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:padding="@dimen/_8sdp"
+                                android:tag="binding_5"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:textAllCaps="true" />
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_end="@dimen/_90sdp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_add_image"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:background="@drawable/bg_login"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_add"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:src="@drawable/ic_add_image"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_starred"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:src="@drawable/ic_star_yellow"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_team_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_minus12sdp"
+                        android:background="@drawable/bg_white_rounded_rect"
+                        android:ellipsize="end"
+                        android:maxWidth="@dimen/_120sdp"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/label_team_details"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/cl_achiever_details"
+                        app:layout_constraintStart_toStartOf="@+id/cl_achiever_details" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_1sdp"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_16sdp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_achiever_details_main">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewpager_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_195sdp"
+                        android:background="@android:color/transparent"
+                        android:nestedScrollingEnabled="false" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_8sdp"
+                        android:animateLayoutChanges="true"
+                        android:background="@android:color/transparent"
+                        app:tabBackground="@drawable/slider_indicator_selector"
+                        app:tabIndicatorHeight="0dp" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_date_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_slider">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_date_time_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/bg_team_self"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingRight="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_date_time_inside"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_25sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_date"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/til_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/bg_team_self"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_date">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_date"
+                                    android:layout_width="0dp"
+                                    android:layout_height="@dimen/_52sdp"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:gravity="center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:inputType="text"
+                                    android:paddingStart="@dimen/_10sdp"
+                                    android:paddingEnd="@dimen/_10sdp"
+                                    android:tag="binding_6"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintEnd_toStartOf="@+id/iv_calendar"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_calendar"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:src="@drawable/ic_calendar"
+                                    app:layout_constraintBottom_toBottomOf="@+id/et_date"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@+id/et_date" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_52sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/bg_team_self"
+                                android:drawableEnd="@drawable/ic_calendar"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:inputType="text"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/light_white_50"
+                                android:textCursorDrawable="@color/white"
+                                android:textSize="@dimen/_13ssp"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/til_date" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_date_required"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_date_required"
+                                android:textColor="@color/yellow"
+                                android:textSize="@dimen/_9sdp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_time"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_time"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_date_required" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_52sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/bg_team_self"
+                                android:drawableEnd="@drawable/ic_time"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:inputType="text"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:tag="binding_7"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/light_white_50"
+                                android:textCursorDrawable="@color/white"
+                                android:textSize="@dimen/_13ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_time" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_time_required"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_time_required"
+                                android:textColor="@color/yellow"
+                                android:textSize="@dimen/_9sdp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/title_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_minus12sdp"
+                        android:background="@drawable/bg_white_rounded_rect"
+                        android:ellipsize="end"
+                        android:maxWidth="@dimen/_120sdp"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/label_date_time"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/cl_date_time_details"
+                        app:layout_constraintStart_toStartOf="@+id/cl_date_time_details" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_meeting_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:background="@drawable/bg_team_self"
+                    android:padding="@dimen/_16sdp"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_date_time">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_meeting_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="@string/label_meeting_availability"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="true" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_online"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:background="@drawable/bg_rounded_corner_green_20"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_16sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:paddingLeft="@dimen/_16sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:tag="binding_8"
+                        android:text="@string/label_online"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_offline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/label_meeting_status"
+                        app:textAllCaps="true" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_offline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_corner_yellow_20"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_16sdp"
+                        android:paddingVertical="@dimen/_5sdp"
+                        android:paddingLeft="@dimen/_16sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_16sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:tag="binding_9"
+                        android:text="@string/label_offline"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_online"
+                        app:layout_constraintTop_toTopOf="@+id/tv_online"
+                        app:textAllCaps="true" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_online_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:tag="binding_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_meeting_time">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_social_fields"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/bg_team_self"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingRight="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_social_icons"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/ll_zoom"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:tag="binding_11"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintEnd_toStartOf="@+id/ll_meet"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_zoom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_zoom_input" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_meet"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:tag="binding_12"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintEnd_toStartOf="@+id/ll_facebook"
+                                app:layout_constraintStart_toEndOf="@+id/ll_zoom"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_meet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_google_meet_input" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_facebook"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:tag="binding_13"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintEnd_toStartOf="@+id/ll_instagram"
+                                app:layout_constraintStart_toEndOf="@+id/ll_meet"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_facebook"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_facebook_input" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_instagram"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:padding="@dimen/_2sdp"
+                                android:tag="binding_14"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintEnd_toStartOf="@+id/ll_youtube"
+                                app:layout_constraintStart_toEndOf="@+id/ll_facebook"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_instagram"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_instagram_input" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_youtube"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:padding="@dimen/_2sdp"
+                                android:tag="binding_15"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/ll_instagram"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/iv_youtube"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_youtube_input" />
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_social_fields_inside"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_social_icons">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_meeting_id"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_meeting_id"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_meeting_id"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_meeting_id">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_meeting_id"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_meeting_id"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_16"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_meeting_password"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_meeting_password"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/til_meeting_id" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_meeting_password"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_meeting_password">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_meeting_password"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_meeting_password"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_17"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_meeting_links"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_social_fields_inside">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_meeting_url"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_meeting_url"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_meeting_url"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_meeting_url">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_meeting_url"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_meeting_url"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_18"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/title_online"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_minus12sdp"
+                        android:background="@drawable/bg_rounded_corner_green_20"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:includeFontPadding="false"
+                        android:maxWidth="@dimen/_120sdp"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/label_online"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/cl_social_fields"
+                        app:layout_constraintEnd_toEndOf="@+id/cl_social_fields"
+                        app:textAllCaps="true" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_offline_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:tag="binding_19"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_online_main">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_address_fields"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:background="@drawable/bg_team_self"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingRight="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_hotel"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:src="@drawable/ic_hotel"
+                            app:layout_constraintDimensionRatio="H,1.1174:1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_address_fields_inside"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_hotel">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_address_line_1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_address_line_1"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_address_line_1"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_address_line_1">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_address_line_1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_address_line_1"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_20"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_address_line_2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_address_line_2"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/til_address_line_1" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_address_line_2"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_address_line_2">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_address_line_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_address_line_2"
+                                    android:inputType="text"
+                                    android:maxLength="35"
+                                    android:tag="binding_21"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/title_offline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_minus12sdp"
+                        android:background="@drawable/bg_rounded_corner_yellow_20"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:includeFontPadding="false"
+                        android:maxWidth="@dimen/_120sdp"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/label_offline"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/cl_address_fields"
+                        app:layout_constraintEnd_toEndOf="@+id/cl_address_fields"
+                        app:textAllCaps="true" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_organizer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_3sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:background="@drawable/bg_team_self"
+                    android:paddingBottom="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_offline_main">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_add_meeting_organizer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/poppins_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="2"
+                        android:text="@string/label_add_meeting_organizer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/switch_organizer"
+                        app:layout_constraintEnd_toStartOf="@+id/switch_organizer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/switch_organizer" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_organizer"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:background="@null"
+                        android:tag="binding_22"
+                        android:thumb="@drawable/thumb_selector"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:track="@drawable/track_selector" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_slider_organizer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_1sdp"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/switch_organizer">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewpager_slider_organizer"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_195sdp"
+                            android:background="@android:color/transparent"
+                            android:nestedScrollingEnabled="false" />
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tab_slider_organizer"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_8sdp"
+                            android:animateLayoutChanges="true"
+                            android:background="@android:color/transparent"
+                            app:tabBackground="@drawable/slider_indicator_selector"
+                            app:tabIndicatorHeight="0dp" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_add_organizer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:background="@android:color/transparent"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_slider_organizer">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_login"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_16sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_16sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_16sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/guide_line_middle">
+
+                            <View
+                                android:id="@+id/view_center_line"
+                                android:layout_width="@dimen/_1sdp"
+                                android:layout_height="@dimen/_1sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/title_host_organizer"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:alpha="0.5"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="@string/label_host_organizer"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_13sdp"
+                                app:layout_constraintEnd_toStartOf="@+id/view_center_line"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_name"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/title_host_organizer" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_name"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_name"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_23"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_designation"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_designation"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/til_name" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_designation"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_designation">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_designation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_designation"
+                                    android:inputType="text"
+                                    android:maxLength="30"
+                                    android:tag="binding_24"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/label_contact_number"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:alpha="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="bottom"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:text="@string/label_contact_number"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/til_designation" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_contact_number"
+                                style="@style/CustomInputLayoutPadding"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                app:boxStrokeErrorColor="@color/yellow"
+                                app:errorIconTint="@color/yellow"
+                                app:errorTextColor="@color/yellow"
+                                app:hintAnimationEnabled="false"
+                                app:hintEnabled="false"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/label_contact_number">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_contact_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:background="@android:color/transparent"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:hint="@string/label_enter_contact_number"
+                                    android:inputType="number"
+                                    android:maxLength="10"
+                                    android:tag="binding_25"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/light_white_50"
+                                    android:textCursorDrawable="@color/white"
+                                    android:textSize="@dimen/_13ssp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_buttons"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                android:weightSum="2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/til_contact_number">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/label_cancel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_rounded_corner_white_stroke_20"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:paddingVertical="@dimen/_10sdp"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:text="@string/label_cancel"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13sdp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/label_save"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_rounded_corner_yellow_20"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:paddingVertical="@dimen/_10sdp"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingBottom="@dimen/_10sdp"
+                                    android:text="@string/label_save"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13sdp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/guide_line_middle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cl_add_image_rounded"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/cl_add_image_rounded" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_add_image_rounded"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="0dp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:background="@drawable/circle_bg"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/iv_starred_new"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:layout_margin="@dimen/_3sdp"
+                                android:src="@drawable/ic_star_yellow"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/load_organizer_image"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_margin="@dimen/_1sdp"
+                                android:background="@color/dark_purple"
+                                android:scaleType="fitCenter"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:shapeAppearanceOverlay="@style/circleAppearance" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/img_add_rounded"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:src="@drawable/ic_add_image"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/label_image_error"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:maxLines="2"
+                            android:text="@string/label_organizer_image_required"
+                            android:textColor="@color/yellow"
+                            android:textSize="@dimen/_9sdp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="@+id/cl_add_image_rounded"
+                            app:layout_constraintStart_toStartOf="@+id/cl_add_image_rounded"
+                            app:layout_constraintTop_toBottomOf="@+id/cl_add_image_rounded" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_organizer">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_filter_inside"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:background="@drawable/bg_login"
+                        android:paddingStart="@dimen/_4sdp"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_filters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_arrow_left"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_left_arrow_dashboard"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/rv_filters"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/rv_filters" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/iv_arrow_right"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:rotation="180"
+                            android:src="@drawable/ic_left_arrow_dashboard"
+                            app:layout_constraintBottom_toBottomOf="@+id/rv_filters"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/rv_filters" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_minus12sdp"
+                        android:background="@drawable/bg_white_rounded_rect"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_12sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="@string/label_filter"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/cl_filter_inside"
+                        app:layout_constraintStart_toStartOf="@+id/cl_filter_inside" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_button_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:animateLayoutChanges="true"
+                    android:background="@drawable/ic_rectangle_yellow_gradient"
+                    android:padding="@dimen/_1sdp"
+                    android:tag="binding_26"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_filter">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_sign_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_button_bg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:includeFontPadding="false"
+                        android:text="@string/label_create"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_sign_in"
+                        app:layout_constraintEnd_toEndOf="@+id/img_sign_in"
+                        app:layout_constraintStart_toStartOf="@+id/img_sign_in"
+                        app:layout_constraintTop_toTopOf="@+id/img_sign_in"
+                        app:textAllCaps="true" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
