@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_my_profile"
+        android:title="My Profile" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_website"
+        android:visible="false"
+        android:title="My Website" />
+    <item
+        android:id="@+id/nav_banner_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Banner Settings" />
+    <item
+        android:id="@+id/nav_Wallet"
+        android:icon="@drawable/ic_wallet_gray"
+        android:title="My Wallet" />
+    <item
+        android:id="@+id/nav_Downloads"
+        android:icon="@drawable/ic_downloads"
+        android:title="My Downloads" />
+
+    <item
+        android:id="@+id/nav_app_use"
+        android:icon="@drawable/ic_suggestions"
+        android:title="Learn how to use app" />
+    <item
+        android:id="@+id/nav_pass"
+        android:icon="@drawable/ic_secure"
+        android:title="Change Password(PIN)" />
+    <item
+        android:id="@+id/nav_Share"
+        android:icon="@drawable/ic_share"
+        android:title="Share Pictho" />
+    <item
+        android:id="@+id/nav_Connecct"
+        android:icon="@drawable/ic_bg_circle_blue"
+        android:title="Connect-Account Manager" />
+    <item
+        android:id="@+id/nav_Website"
+        android:icon="@drawable/ic_website"
+        android:visible="false"
+        android:title="Share Website" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+</menu>

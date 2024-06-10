@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".utils.ui.AppController"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -10,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat"
+        android:theme="@style/AppTheme.PopupOverlay"
         tools:targetApi="31">
         <activity
             android:name=".ui.activities.bannerscreen.WelcomeBannerInputActivity"
@@ -28,7 +29,7 @@
             android:name=".ui.activities.bannerscreen.CashBannerInputActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.bannerscreen.CappingBannerInputActivity"
+            android:name=".ui.activities.others.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat">
@@ -68,9 +69,6 @@
             android:name=".ui.activities.home.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.others.SplashActivity"
-            android:exported="true" />
-        <activity
             android:name=".ui.activities.others.NoInternetActivity"
             android:exported="false" />
         <activity
@@ -83,8 +81,21 @@
             android:name=".ui.activities.auth.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activities.home.MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:name=".ui.MainActivity"
             android:exported="true" />
+        <activity android:name=".ui.presentation.profile.ProfileActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.presentation.bannerSettings.BannerSettingsActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.presentation.download.DownloadActivity"
+            android:exported="true"/>
+        <activity android:name=".ui.presentation.wallet.WalletActivity"
+            android:exported="true"/>
+        <activity android:name=".presentation.LearnHowToUseActivity"
+            android:theme="@style/AppTheme.PopupOverlay"
+            android:exported="true"/>
+        <activity android:name=".presentation.BannerEditActivity"/>
     </application>
 
 </manifest>

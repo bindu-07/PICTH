@@ -1,26 +1,32 @@
-package com.photo.picth.ui.activities.others;
+package com.photo.picth.ui.activities.others
 
-import android.os.Bundle;
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+import com.photo.picth.R
+import com.photo.picth.ui.MainActivity
+import com.photo.picth.ui.activities.auth.LoginActivity
+import com.photo.picth.utils.ui.AppController
+import com.photo.picth.utils.ui.Constants
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+class SplashActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        supportActionBar!!.hide()
+        setContentView(R.layout.activity_splash)
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (AppController.mInstance.getBoolean(Constants.IS_LOGIN)) {
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
 
-import com.photo.picth.R;
-
-public class SplashActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_splash);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+            } else {
+                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }, 600)
     }
 }

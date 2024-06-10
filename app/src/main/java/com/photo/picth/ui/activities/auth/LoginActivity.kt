@@ -1,26 +1,31 @@
-package com.photo.picth.ui.activities.auth;
+package com.photo.picth.ui.activities.auth
 
-import android.os.Bundle;
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.photo.picth.R
+import com.photo.picth.databinding.ActivityLoginBinding
+import com.photo.picth.databinding.ActivityMainBinding
+import com.photo.picth.ui.MainActivity
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+class LoginActivity : AppCompatActivity() {
+    private var _binding: ActivityLoginBinding? = null
+    val binding get() = _binding!!
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        supportActionBar!!.hide()
+        _binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        init()
 
-import com.photo.picth.R;
+    }
 
-public class LoginActivity extends AppCompatActivity {
+    private fun init(){
+        binding.imgSignIn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_login);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
     }
 }

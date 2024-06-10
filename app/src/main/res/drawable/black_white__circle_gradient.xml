@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item>
+        <shape android:shape="oval">
+            <gradient android:startColor="@color/light_black_10" android:endColor="@color/light_black_10" android:angle="180" android:centerY="0.2" android:centerColor="@color/light_white_10"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient android:startColor="@color/light_black_10" android:endColor="@color/light_black_10" android:angle="180" android:centerY="0.8" android:centerColor="@color/light_white_10"/>
+        </shape>
+    </item>
+</layer-list>
