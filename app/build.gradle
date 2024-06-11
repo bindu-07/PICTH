@@ -91,6 +91,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
-
+//    Image Cropper
+    implementation(libs.android.image.cropper)
 
 }
