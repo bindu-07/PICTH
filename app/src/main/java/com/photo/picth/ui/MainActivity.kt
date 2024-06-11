@@ -8,6 +8,7 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
@@ -79,6 +80,8 @@ class MainActivity : AppCompatActivity() {
         )
         binding.drawerLayout.addDrawerListener(toggle!!)
         toggle!!.syncState()
+
+        binding.navView.itemIconTintList = ContextCompat.getColorStateList(this, R.color.white)
 
         binding.navView.setNavigationItemSelectedListener { item ->
             // Handle navigation view item clicks here.

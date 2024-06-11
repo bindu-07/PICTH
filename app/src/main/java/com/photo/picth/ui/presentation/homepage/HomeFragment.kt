@@ -38,43 +38,43 @@ import com.photo.picth.adapter.BannerAdapter
 
     private fun initUI() {
         _binding!!.rvStories.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvStories.adapter = BannerAdapter(R.layout.rvstories_item)
+        _binding!!.rvStories.adapter = BannerAdapter(R.layout.rvstories_item,"Story")
 
         _binding!!.rvBanner2.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvBanner2.adapter = BannerAdapter(R.layout.rv_moti_item)
+        _binding!!.rvBanner2.adapter = BannerAdapter(R.layout.rv_moti_item, "Story")
 
         _binding!!.rvBanner3.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvBanner3.adapter = BannerAdapter(R.layout.rv3_item)
+        _binding!!.rvBanner3.adapter = BannerAdapter(R.layout.rv3_item, "Story")
 
         _binding!!.rvBanner4.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvBanner4.adapter = BannerAdapter(R.layout.rv4_item)
+        _binding!!.rvBanner4.adapter = BannerAdapter(R.layout.rv4_item, "Story")
 
         _binding!!.rvFestival.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvFestival.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvFestival.adapter = BannerAdapter(R.layout.rvfestival_item, "festival")
 
         _binding!!.rvRank.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvRank.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvRank.adapter = BannerAdapter(R.layout.rvfestival_item, "Story")
 
         _binding!!.rvAchievements.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvAchievements.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvAchievements.adapter = BannerAdapter(R.layout.rvfestival_item, "achieve")
 
         _binding!!.rvBonanza.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvBonanza.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvBonanza.adapter = BannerAdapter(R.layout.rvfestival_item, "bonan")
 
         _binding!!.rvAnniversary.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvAnniversary.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvAnniversary.adapter = BannerAdapter(R.layout.rvanivarsary_item, "birth")
 
         _binding!!.rvMsg.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvMsg.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvMsg.adapter = BannerAdapter(R.layout.rvfestival_item, "Story")
 
         _binding!!.rvMeeting.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvMeeting.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvMeeting.adapter = BannerAdapter(R.layout.rvfestival_item, "Story")
 
         _binding!!.rvIncome.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvIncome.adapter = BannerAdapter(R.layout.rvfestival_item)
+        _binding!!.rvIncome.adapter = BannerAdapter(R.layout.rvincome_item, "income")
 
         _binding!!.rvCapping.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        _binding!!.rvCapping.adapter = BannerAdapter(R.layout.rv_item)
+        _binding!!.rvCapping.adapter = BannerAdapter(R.layout.rv_item, "capping")
 
 
     }

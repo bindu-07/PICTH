@@ -42,7 +42,7 @@ class FeedFragment : Fragment(R.layout.fragment_feed) {
 
     private fun initUI() {
         binding.rvFeed.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-        binding.rvFeed.adapter = BannerAdapter(R.layout.rv_feed)
+        binding.rvFeed.adapter = BannerAdapter(R.layout.rv_feed, "Story")
     }
 
     companion object {
