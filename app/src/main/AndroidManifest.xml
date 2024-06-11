@@ -100,7 +100,7 @@
             android:name=".ui.presentation.wallet.WalletActivity"
             android:exported="true" />
         <activity
-            android:name=".presentation.LearnHowToUseActivity"
+            android:name=".ui.presentation.LearnHowToUseActivity"
             android:exported="true"
             android:theme="@style/AppTheme.PopupOverlay" />
         <activity android:name=".presentation.BannerEditActivity" />
