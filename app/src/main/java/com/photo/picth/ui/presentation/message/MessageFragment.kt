@@ -42,7 +42,7 @@ class MessageFragment : Fragment(R.layout.fragment_message) {
 
     private fun initUI() {
         binding.rvMsg.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-        binding.rvMsg.adapter = BannerAdapter(R.layout.rv_msg)
+        binding.rvMsg.adapter = BannerAdapter(R.layout.rv_msg, "Story")
 
     }
 

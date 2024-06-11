@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             app:tabIndicatorColor="@color/white"
-            app:tabSelectedTextColor="@color/m3_ref_palette_error60"
+            app:tabSelectedTextColor="@color/light_yellow"
             app:tabTextColor="@android:color/white" />
 
         <include

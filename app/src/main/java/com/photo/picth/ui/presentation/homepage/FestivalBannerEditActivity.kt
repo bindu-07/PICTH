@@ -1,15 +1,16 @@
-package com.photo.picth.ui.activities.bannerscreen
+package com.photo.picth.ui.presentation.homepage
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.photo.picth.R
 
-class CloseBannerInputActivity : AppCompatActivity() {
+class FestivalBannerEditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.enableEdgeToEdge()
-        setContentView(R.layout.activity_close_banner_input)
+        enableEdgeToEdge()
         supportActionBar!!.hide()
+        setContentView(R.layout.activity_festival_banner_edit)
+
     }
 }
