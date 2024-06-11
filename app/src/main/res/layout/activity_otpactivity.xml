@@ -396,6 +396,8 @@
                         android:gravity="bottom"
                         android:includeFontPadding="false"
                         android:maxLines="2"
+
+
                         android:padding="@dimen/_5sdp"
                         android:text="@string/label_login_now"
                         android:textColor="@color/yellow"
