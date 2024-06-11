@@ -14,6 +14,7 @@ import com.google.android.material.tabs.TabLayout
 import com.photo.picth.R
 import com.photo.picth.databinding.ActivityMainBinding
 import com.photo.picth.presentation.LearnHowToUseActivity
+import com.photo.picth.ui.activities.auth.ConfirmPasswordActivity
 import com.photo.picth.ui.presentation.bannerSettings.BannerSettingsActivity
 import com.photo.picth.ui.presentation.download.DownloadActivity
 import com.photo.picth.ui.presentation.feed.FeedFragment
@@ -108,6 +109,11 @@ class MainActivity : AppCompatActivity() {
             if (id == R.id.nav_app_use) {
                 // Handle the action
                 startNewActivity(LearnHowToUseActivity::class.java)
+            }
+
+            if (id == R.id.nav_pass) {
+                // Handle the action
+                startNewActivity(ConfirmPasswordActivity::class.java)
             }
 
             binding.drawerLayout.closeDrawer(GravityCompat.START)
