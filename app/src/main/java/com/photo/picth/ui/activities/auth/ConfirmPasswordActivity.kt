@@ -25,9 +25,20 @@ class ConfirmPasswordActivity : AppCompatActivity() {
 
     private fun init(){
         binding.imgSignIn.setOnClickListener {
-            val intent = Intent(this, OTPActivity::class.java)
-            startActivity(intent)
-            finish()
+            val newPassword = binding.etNewPassword.text.toString()
+            val confirmPassword = binding.etConfirmPassword.text.toString()
+            if (newPassword.isNotEmpty()  && confirmPassword.isNotEmpty() ){
+                if (newPassword == confirmPassword){
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    binding.etConfirmPassword.error = "Password does not match"
+                }
+            }else{
+                binding.etNewPassword.error = "Password is empty"
+                binding.etConfirmPassword.error = "Confirm password is empty"
+            }
         }
 //        binding.tvRegister.setOnClickListener {
 //            val intent = Intent(this, RegisterActivity::class.java)

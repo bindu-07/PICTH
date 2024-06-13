@@ -21,12 +21,22 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     private fun init(){
         binding.clSendOtp.setOnClickListener {
-            val intent = Intent(this, OTPActivity::class.java)
-            startActivity(intent)
-            finish()
+            val  mobileNumber = binding.etMobileNumber.text.toString()
+            if(mobileNumber.isNotEmpty()){
+                val bundle = Bundle()
+                bundle.putString("Activity", "ForgotPasswordActivity")
+                val intent = Intent(this, OTPActivity::class.java)
+                intent.putExtras(bundle)
+                startActivity(intent)
+                finish()
+            }else{
+                binding.etMobileNumber.error = "Please enter mobile number"
+            }
+
         }
         binding.tvLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+
             startActivity(intent)
             finish()
         }

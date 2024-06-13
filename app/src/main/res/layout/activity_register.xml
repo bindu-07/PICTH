@@ -167,7 +167,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_name"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -183,7 +182,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_name"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:digits="@string/label_allowed_digits"
                         android:fontFamily="@font/poppins_regular"
@@ -228,7 +227,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_number"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -244,7 +242,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_mobile_number"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/label_enter_mobile"
@@ -288,6 +286,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
+                        android:visibility="gone"
                         android:orientation="horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
@@ -440,7 +439,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_password"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -457,7 +455,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/label_enter_password"

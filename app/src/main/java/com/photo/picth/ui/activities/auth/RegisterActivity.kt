@@ -12,6 +12,7 @@ import com.photo.picth.ui.MainActivity
     class RegisterActivity : AppCompatActivity() {
         private var _binding: ActivityRegisterBinding? = null
         val binding get() = _binding!!
+        var gender = "Male"
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             supportActionBar!!.hide()
@@ -23,9 +24,33 @@ import com.photo.picth.ui.MainActivity
 
         private fun init(){
             binding.imgSignIn.setOnClickListener {
-                val intent = Intent(this, OTPActivity::class.java)
-                startActivity(intent)
-                finish()
+                val  mobileNumber = binding.etMobileNumber.text.toString()
+                val  password = binding.etPassword.text.toString()
+                val  name = binding.etPassword.text.toString()
+                if (mobileNumber.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty()){
+                    val bundle = Bundle()
+                    bundle.putString("Activity", "RegisterActivity")
+                    val intent = Intent(this, OTPActivity::class.java)
+                    intent.putExtras(bundle)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    binding.etMobileNumber.error = "Enter Mobile Number"
+                    binding.etPassword.error = "Enter Password"
+                    binding.etName.error = "Enter Name"
+                }
+
+            }
+
+            binding.ivMale.setOnClickListener {
+                binding.ivMale.setBackgroundResource(R.drawable.circle_bg)
+                binding.ivFemale.setBackgroundResource(17170445);
+                gender = "Male"
+            }
+            binding.ivFemale.setOnClickListener {
+                binding.ivFemale.setBackgroundResource(R.drawable.circle_bg)
+                binding.ivMale.setBackgroundResource(17170445);
+                gender = "FeMale"
             }
             binding.tvLogin.setOnClickListener {
                 val intent = Intent(this, LoginActivity::class.java)

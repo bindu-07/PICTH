@@ -77,6 +77,12 @@
             android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_yellow">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_dot_2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_dot_transparent" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_dot_1"
@@ -85,12 +91,6 @@
                 android:padding="@dimen/_2sdp"
                 android:src="@drawable/ic_dot_yellow" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_dot_2"
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:padding="@dimen/_2sdp"
-                android:src="@drawable/ic_dot_transparent" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_dot_3"
