@@ -16,7 +16,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProfileActivity.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ProfileActivity :  AppCompatActivity(R.layout.fragment_profile) {
+class ProfileActivity :  AppCompatActivity(R.layout.activity_profile) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
