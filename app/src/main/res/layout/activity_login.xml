@@ -303,6 +303,7 @@
                         tools:ignore="MissingConstraints" />
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_3sdp"
@@ -314,6 +315,16 @@
                         app:layout_constraintEnd_toEndOf="@+id/img_sign_in"
                         app:layout_constraintStart_toStartOf="@+id/img_sign_in"
                         app:layout_constraintTop_toTopOf="@+id/img_sign_in" />
+                    <ProgressBar
+                        android:id="@+id/prgbar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout

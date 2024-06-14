@@ -1,10 +1,7 @@
 package com.photo.picth.ui
 
-import android.app.Activity
 import android.content.BroadcastReceiver
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +12,6 @@ import com.google.android.material.tabs.TabLayout
 import com.photo.picth.R
 import com.photo.picth.databinding.ActivityMainBinding
 import com.photo.picth.presentation.LearnHowToUseActivity
-import com.photo.picth.ui.activities.auth.ConfirmPasswordActivity
 import com.photo.picth.ui.activities.auth.ForgotPasswordActivity
 import com.photo.picth.ui.presentation.bannerSettings.BannerSettingsActivity
 import com.photo.picth.ui.presentation.download.DownloadActivity
