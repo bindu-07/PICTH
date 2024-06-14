@@ -7,12 +7,10 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.photo.picth.data.api.response.BaseResponse
-import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.databinding.ActivityConfirmPasswordBinding
 import com.photo.picth.ui.MainActivity
-import com.photo.picth.utils.ui.SessionManager
-import com.photo.picth.viewmodel.ForgotPasswordViewModel
+import com.photo.picth.utils.ui.AppController
 import com.photo.picth.viewmodel.ResetPasswordViewModel
 
 class ConfirmPasswordActivity : AppCompatActivity() {
@@ -56,7 +54,7 @@ class ConfirmPasswordActivity : AppCompatActivity() {
 
         val view = binding.root
         setContentView(view)
-        val token = SessionManager.getToken(this)
+        val token = AppController.mInstance.getAuth()
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }

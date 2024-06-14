@@ -1,6 +1,6 @@
 package com.photo.picth.repository
 
-import com.photo.picth.data.api.methods.UserApi
+import com.photo.picth.network.interfaces.UserApi
 import com.photo.picth.data.api.request.ForgotPasswordRequest
 import com.photo.picth.data.api.request.LoginRequest
 import com.photo.picth.data.api.request.RegisterRequest
@@ -11,6 +11,7 @@ import com.photo.picth.data.api.response.LoginResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
+import com.photo.picth.ui.presentation.homepage.Category
 import retrofit2.Response
 
 class UserRepository {
@@ -32,5 +33,8 @@ class UserRepository {
 
     suspend fun resetPasswordUser(resetPasswordUser: ResetPasswordRequest): Response<ResetPasswordResponse>? {
         return  UserApi.getApi()?.resetPasswordUser(resetPasswordRequest = resetPasswordUser)
+    }
+    suspend fun getHomeData(): Response<List<Category>>? {
+        return  UserApi.getApi()?.getHomeData()
     }
 }

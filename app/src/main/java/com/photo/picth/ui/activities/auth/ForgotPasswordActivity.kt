@@ -8,11 +8,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ForgotPasswordResponse
-import com.photo.picth.data.api.response.LoginResponse
 import com.photo.picth.databinding.ActivityForgotPasswordBinding
-import com.photo.picth.utils.ui.SessionManager
+import com.photo.picth.utils.ui.AppController
 import com.photo.picth.viewmodel.ForgotPasswordViewModel
-import com.photo.picth.viewmodel.LoginViewModel
 
 class ForgotPasswordActivity : AppCompatActivity() {
     private var _binding: ActivityForgotPasswordBinding? = null
@@ -53,7 +51,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
         val view = binding.root
         setContentView(view)
-        val token = SessionManager.getToken(this)
+        val token =  AppController.mInstance.getAuth()
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
@@ -126,7 +124,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     fun processLogin(data: ForgotPasswordResponse?) {
         showToast("Success:" + data?.message)
         if (!data?.message?.isNullOrEmpty()!!) {
-            data?.message?.let { SessionManager.saveAuthToken(this, it) }
+            data?.message?.let {  AppController.mInstance.setAuth( it) }
             navigateToHome()
         }
     }

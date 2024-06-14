@@ -37,7 +37,7 @@
         android:title="Share Pictho" />
     <item
         android:id="@+id/nav_Connecct"
-        android:icon="@drawable/ic_bg_circle_blue"
+        android:icon="@drawable/ic_whatsapp"
         android:title="Connect-Account Manager" />
     <item
         android:id="@+id/nav_Website"

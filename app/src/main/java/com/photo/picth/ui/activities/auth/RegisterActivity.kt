@@ -12,7 +12,7 @@ import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.databinding.ActivityRegisterBinding
-import com.photo.picth.utils.ui.SessionManager
+import com.photo.picth.utils.ui.AppController
 import com.photo.picth.viewmodel.ForgotPasswordViewModel
 import com.photo.picth.viewmodel.RegisterViewModel
 
@@ -72,7 +72,7 @@ class RegisterActivity : AppCompatActivity() {
 
             val view = binding.root
             setContentView(view)
-            val token = SessionManager.getToken(this)
+            val token =  AppController.mInstance.getAuth()
             if (!token.isNullOrBlank()) {
                 navigateToHome()
             }
@@ -170,7 +170,7 @@ class RegisterActivity : AppCompatActivity() {
     fun processLogin(data: RegisterResponse?) {
         showToast("Success:" + data?.message)
         if (!data?.data?.accessToken.isNullOrEmpty()) {
-            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
+            data?.data?.accessToken?.let {  AppController.mInstance .setAuth( it) }
             navigateToHome()
         }
     }
