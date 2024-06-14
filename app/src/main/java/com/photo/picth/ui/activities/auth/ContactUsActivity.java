@@ -18,10 +18,6 @@ public class ContactUsActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_contact_us);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+
     }
 }
