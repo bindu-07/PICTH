@@ -2,10 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/abc_action_bar_content_inset_material"
     android:tag="layout/activity_birthday_anniversary_banner_input_0">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -449,7 +452,8 @@
                             android:visibility="gone"
                             app:layout_constraintCircle="@+id/cl_close_two"
                             app:layout_constraintCircleAngle="45"
-                            app:layout_constraintCircleRadius="@dimen/_40sdp" />
+                            app:layout_constraintCircleRadius="@dimen/_40sdp"
+                            tools:ignore="MissingConstraints" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout

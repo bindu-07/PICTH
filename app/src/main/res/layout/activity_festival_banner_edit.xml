@@ -3,7 +3,10 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
+    android:paddingTop="@dimen/abc_action_bar_content_inset_material"
+
     android:tag="layout/activity_festival_banner_editor_0">
 
     <com.google.android.material.imageview.ShapeableImageView

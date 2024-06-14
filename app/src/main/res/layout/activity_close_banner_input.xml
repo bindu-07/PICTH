@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/abc_action_bar_content_inset_material"
+
     android:tag="layout/activity_close_banner_input_0">
 
     <com.google.android.material.imageview.ShapeableImageView

@@ -95,9 +95,11 @@
             android:exported="true" />
         <activity
             android:name=".ui.presentation.download.DownloadActivity"
+            android:theme="@style/AppTheme.PopupOverlay"
             android:exported="true" />
         <activity
             android:name=".ui.presentation.wallet.WalletActivity"
+            android:theme="@style/AppTheme.PopupOverlay"
             android:exported="true" />
         <activity
             android:name=".ui.presentation.LearnHowToUseActivity"
