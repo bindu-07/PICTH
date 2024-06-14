@@ -5,11 +5,11 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.photo.picth.R
-import com.photo.picth.databinding.FragmentHomeBinding
 import com.photo.picth.adapter.BannerAdapter
+import com.photo.picth.databinding.FragmentHomeBinding
 
 
- class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!

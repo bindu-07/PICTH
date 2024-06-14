@@ -3,7 +3,7 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph_register"
-    app:startDestination="@id/registrationFragmentThree">
+    app:startDestination="@id/registrationFragmentTwo">
     <fragment
         android:id="@+id/registrationFragmentTwo"
         android:name="com.photo.picth.models.register.RegistrationFragmentTwo"

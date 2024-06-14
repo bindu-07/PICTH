@@ -11,7 +11,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.photo.picth.R
 import com.photo.picth.databinding.ActivityMainBinding
-import com.photo.picth.ui.presentation.LearnHowToUseActivity
+import com.photo.picth.presentation.LearnHowToUseActivity
+import com.photo.picth.ui.activities.auth.ForgotPasswordActivity
 import com.photo.picth.ui.presentation.bannerSettings.BannerSettingsActivity
 import com.photo.picth.ui.presentation.download.DownloadActivity
 import com.photo.picth.ui.presentation.feed.FeedFragment
@@ -20,8 +21,6 @@ import com.photo.picth.ui.presentation.message.MessageFragment
 import com.photo.picth.ui.presentation.profile.ProfileActivity
 import com.photo.picth.ui.presentation.wallet.WalletActivity
 import com.photo.picth.utils.ui.CommonMethod
-import com.photo.picth.utils.ui.CommonMethod.Companion.openWhatsAppWithMessage
-import com.photo.picth.utils.ui.CommonMethod.Companion.showLogoutDialog
 import com.photo.picth.utils.ui.startNewActivity
 
 class MainActivity : AppCompatActivity() {
@@ -66,8 +65,6 @@ class MainActivity : AppCompatActivity() {
                 handleBack()
             }
         })
-
-
     }
 
     private fun drawer() {
@@ -78,8 +75,6 @@ class MainActivity : AppCompatActivity() {
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
-        toggle!!.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.white)
-
         binding.drawerLayout.addDrawerListener(toggle!!)
         toggle!!.syncState()
 
@@ -111,18 +106,15 @@ class MainActivity : AppCompatActivity() {
                 // Handle the action
                 CommonMethod.shareApp(this)
             }
-            if (id == R.id.nav_Connecct) {
-                // Handle the action
-                openWhatsAppWithMessage(this,"Hello, this is a test message!")
-             }
             if (id == R.id.nav_app_use) {
                 // Handle the action
                 startNewActivity(LearnHowToUseActivity::class.java)
             }
-            if (id == R.id.nav_logout) {
+
+            if (id == R.id.nav_pass) {
                 // Handle the action
-                showLogoutDialog(this)
-             }
+                startNewActivity(ForgotPasswordActivity::class.java)
+            }
 
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
