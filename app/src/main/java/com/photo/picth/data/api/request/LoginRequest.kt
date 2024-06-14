@@ -7,5 +7,4 @@ data class LoginRequest (
     var username: String,
     @SerializedName("password")
     var password: String,
-
 )

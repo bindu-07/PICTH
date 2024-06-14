@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import com.photo.picth.R
 import com.photo.picth.databinding.ActivityMainBinding
-import com.photo.picth.presentation.LearnHowToUseActivity
-import com.photo.picth.ui.activities.auth.ForgotPasswordActivity
+ import com.photo.picth.ui.activities.auth.ForgotPasswordActivity
+import com.photo.picth.ui.presentation.LearnHowToUseActivity
 import com.photo.picth.ui.presentation.bannerSettings.BannerSettingsActivity
 import com.photo.picth.ui.presentation.download.DownloadActivity
 import com.photo.picth.ui.presentation.feed.FeedFragment

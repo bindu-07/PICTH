@@ -3,6 +3,7 @@ agp = "8.4.0"
 androidxLifecycleRuntimeKtx = "2.8.2"
 circleimageview = "3.1.0"
 converterGson = "2.9.0"
+core = "12.1.0"
 fragmentKtx = "1.8.0"
 gson = "2.10.1"
 kotlin = "1.9.0"
@@ -45,6 +46,7 @@ androidx-media3-exoplayer = { module = "androidx.media3:media3-exoplayer", versi
 androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+core = { module = "com.pierfrancescosoffritti.androidyoutubeplayer:core", version.ref = "core" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

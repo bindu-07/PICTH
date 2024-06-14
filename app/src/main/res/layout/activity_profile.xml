@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/splash_background_512" />
+                android:src="@drawable/bg1" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_upper"

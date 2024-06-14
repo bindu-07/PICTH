@@ -19,6 +19,9 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.photo.picth.R
+import com.photo.picth.ui.MainActivity
+import com.photo.picth.ui.activities.auth.LoginActivity
+import com.photo.picth.utils.ui.Constants.Companion.AUTH_KEY
 import com.photo.picth.utils.ui.Constants.Companion.DEVICE_TOKEN
 import com.photo.picth.utils.ui.Constants.Companion.FCM_TOKEN
 
@@ -162,15 +165,26 @@ class AppController : Application(), LifecycleObserver {
 
     }
 
-    fun setDeviceToken(value: String) {
-        editorToken.putString(DEVICE_TOKEN, value)
+    fun setAuth(value: String) {
+        editorToken.putString(AUTH_KEY, value)
         editorToken.commit()
     }
 
     // get device token
-    fun getDeviceToken(): String {
-        return prefToken.getString(DEVICE_TOKEN, "232376")!!
+    fun getAuth(): String {
+        return prefToken.getString(AUTH_KEY, "")!!
     }
+
+
+//    fun setDeviceToken(value: String) {
+//        editorToken.putString(DEVICE_TOKEN, value)
+//        editorToken.commit()
+//    }
+//
+//    // get device token
+//    fun getDeviceToken(): String {
+//        return prefToken.getString(DEVICE_TOKEN, "232376")!!
+//    }
 
     fun setFcmToken(value: String) {
         editorToken.putString(FCM_TOKEN, value)
@@ -235,7 +249,13 @@ class AppController : Application(), LifecycleObserver {
 
 
 
+    fun tokenExpire() {
+        val mainIntent = Intent( MainActivity.mInstance, LoginActivity::class.java)
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(mainIntent)
+        MainActivity.mInstance.finishAffinity()
 
+    }
 
 
 

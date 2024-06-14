@@ -3,6 +3,7 @@ package com.photo.picth.utils.ui
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.startActivity
 import com.photo.picth.presentation.BannerEditActivity
@@ -61,6 +62,9 @@ class CommonMethod {
             dialog.show()
         }
 
+        fun showToast(context: Activity,msg: String) {
+            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        }
 
 
     }

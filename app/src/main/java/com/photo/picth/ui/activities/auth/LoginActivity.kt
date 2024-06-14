@@ -3,16 +3,15 @@ package com.photo.picth.ui.activities.auth
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.photo.picth.R
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.LoginResponse
-import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.databinding.ActivityLoginBinding
 import com.photo.picth.ui.MainActivity
-import com.photo.picth.utils.ui.SessionManager
+import com.photo.picth.utils.ui.AppController
+import com.photo.picth.utils.ui.CommonMethod.Companion.showToast
 import com.photo.picth.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -65,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
 
         val view = binding.root
         setContentView(view)
-        val token = SessionManager.getToken(this)
+        val token = AppController.mInstance.getAuth()
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
@@ -133,18 +132,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun processLogin(data: LoginResponse?) {
-        showToast("Success:" + data?.message)
+        showToast(this,"Success:" + data?.message)
         if (data?.message == "User details fetch successfully") {
-            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
+            data.data.accessToken?.let {
+                AppController.mInstance.setAuth(it)
+             }
             navigateToHome()
         }
     }
 
     fun processError(msg: String?) {
-        showToast("Error:" + msg)
+        showToast(this,"Error:" + msg)
     }
 
-    fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-    }
+
 }

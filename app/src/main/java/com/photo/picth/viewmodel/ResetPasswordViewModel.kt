@@ -22,7 +22,6 @@ class ResetPasswordViewModel(application: Application) : AndroidViewModel(applic
         resetPasswordResult.value = BaseResponse.Loading()
         viewModelScope.launch {
             try {
-
                 val resetPasswordUser = ResetPasswordRequest(username = username, newPassword = password)
                 val response = userRepo.resetPasswordUser(resetPasswordUser)
                 if (response?.code() == 200) {
