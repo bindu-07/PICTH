@@ -1,76 +1,50 @@
-package com.photo.picth.adapter
-
-import android.content.ClipData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.photo.picth.R
-import com.photo.picth.ui.presentation.homepage.Category
-import com.photo.picth.ui.presentation.homepage.Item
+import com.photo.picth.adapter.CircleAdapter
+import com.photo.picth.adapter.MotivationAdapter
+import com.photo.picth.adapter.RvHorizontalBannerAdapter
+import com.photo.picth.ui.presentation.homepage.CategoryItem
 
-class CategoriesAdapter(private val categories: List<Category>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    companion object {
-        private const val VIEW_TYPE_CATEGORY = 0
-        private const val VIEW_TYPE_ITEM = 1
-    }
-
-    private val items = mutableListOf<Any>()
-
-    init {
-        categories.forEach { category ->
-            items.add(category.name)
-            items.addAll(category.items)
-        }
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return if (items[position] is String) VIEW_TYPE_CATEGORY else VIEW_TYPE_ITEM
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == VIEW_TYPE_CATEGORY) {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_category_name, parent, false)
-            CategoryViewHolder(view)
-        } else {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.rv3_item, parent, false)
-            ItemViewHolder(view)
-        }
-    }
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (getItemViewType(position) == VIEW_TYPE_CATEGORY) {
-            (holder as CategoryViewHolder).bind(items[position] as String)
-        } else {
-            (holder as ItemViewHolder).bind(items[position] as Item)
-        }
-    }
-
-    override fun getItemCount(): Int {
-        return items.size
-    }
+class CategoryAdapter(private val categories: List<CategoryItem>) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
+        val tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
+        val rvItems: RecyclerView = itemView.findViewById(R.id.rvItems)
+    }
 
-        fun bind(name: String) {
-            tvCategoryName.text = name
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_category_name, parent, false)
+        return CategoryViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
+        val category = categories[position]
+        holder.tvCategoryName.text = category.name
+
+//        // Set up the inner RecyclerView
+//        holder.rvItems.apply {
+//            layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
+//            adapter = ItemAdapter(category.items)
+//        }
+
+        // Set up the inner RecyclerView with different adapters based on the position
+        val adapter = when (position) {
+            0 -> CircleAdapter(category.items) // Use CircleAdapter for position 0
+            1 -> MotivationAdapter(category.items) // Use DifferentAdapter for position 1
+            3 -> RvHorizontalBannerAdapter(category.items) // Use DifferentAdapter for position 1
+            else -> ItemAdapter(category.items) // Use ItemAdapter for other positions
+        }
+
+        holder.rvItems.apply {
+            layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
+            this.adapter = adapter
         }
     }
 
-    class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val imageView: ImageView = itemView.findViewById(R.id.imageView)
-//        private val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
-//        private val tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
-
-        fun bind(item: Item) {
-//            tvTitle.text = item.title
-//            tvDescription.text = item.description
-            Glide.with(itemView.context).load(item.imageUrl).into(imageView)
-        }
-    }
+    override fun getItemCount(): Int = categories.size
 }

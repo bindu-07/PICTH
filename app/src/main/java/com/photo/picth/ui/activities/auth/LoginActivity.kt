@@ -12,6 +12,7 @@ import com.photo.picth.databinding.ActivityLoginBinding
 import com.photo.picth.ui.MainActivity
 import com.photo.picth.utils.ui.AppController
 import com.photo.picth.utils.ui.CommonMethod.Companion.showToast
+import com.photo.picth.utils.ui.Constants
 import com.photo.picth.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -102,6 +103,7 @@ class LoginActivity : AppCompatActivity() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)
+        finish()
     }
 
     fun doLogin() {
@@ -137,6 +139,7 @@ class LoginActivity : AppCompatActivity() {
             data.data.accessToken?.let {
                 AppController.mInstance.setAuth(it)
              }
+            AppController.mInstance.getBoolean(Constants.IS_LOGIN)
             navigateToHome()
         }
     }

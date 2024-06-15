@@ -4,17 +4,15 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.photo.picth.data.api.request.ForgotPasswordRequest
 import com.photo.picth.data.api.request.ResetPasswordRequest
 import com.photo.picth.data.api.response.BaseResponse
-import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
-import com.photo.picth.repository.UserRepository
+import com.photo.picth.repository.ApiRepository
 import kotlinx.coroutines.launch
 
 class ResetPasswordViewModel(application: Application) : AndroidViewModel(application) {
 
-    val userRepo = UserRepository()
+    val userRepo = ApiRepository()
     val resetPasswordResult: MutableLiveData<BaseResponse<ResetPasswordResponse>> = MutableLiveData()
 
     fun ResetPasswordUser(username: String, password: String) {

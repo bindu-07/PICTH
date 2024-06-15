@@ -19,6 +19,7 @@
            tools:ignore="MissingConstraints">
 
            <ImageView
+               android:id="@+id/imageViewSpecial"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:scaleType="fitXY"
@@ -38,6 +39,7 @@
                android:layout_gravity="center_vertical"
                android:src="@drawable/ic_dot"/>
            <TextView
+               android:id="@+id/tv_title"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="Pongal"
