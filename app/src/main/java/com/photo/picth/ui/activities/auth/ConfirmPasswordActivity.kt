@@ -91,7 +91,7 @@ class ConfirmPasswordActivity : AppCompatActivity() {
     private fun navigateToHome() {
 //        val bundle = Bundle()
 //        bundle.putString("Activity", "ForgotPasswordActivity")
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         //intent.putExtras(bundle)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
@@ -132,10 +132,10 @@ class ConfirmPasswordActivity : AppCompatActivity() {
 
     fun processLogin(data: ResetPasswordResponse?) {
         showToast("Success:" + data?.message)
-        if (!data?.data?.accessToken.isNullOrEmpty()) {
+//        if (!data?.data?.accessToken.isNullOrEmpty()) {
 //            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
             navigateToHome()
-        }
+//        }
     }
 
     fun processError(msg: String?) {

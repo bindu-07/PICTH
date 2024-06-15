@@ -96,27 +96,27 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
             }
-            viewModel1.forgotPasswordResult.observe(this) {
-                when (it) {
-                    is BaseResponse.Loading -> {
-                        showLoading()
-                    }
+//            viewModel1.forgotPasswordResult.observe(this) {
+//                when (it) {
+//                    is BaseResponse.Loading -> {
+//                        showLoading()
+//                    }
+//
+//                    is BaseResponse.Success -> {
+//                        stopLoading()
+//                        processOtp(it.data)
+//                    }
+//
+//                    is BaseResponse.Error -> {
+//                        processError(it.msg)
+//                    }
+//                    else -> {
+//                        stopLoading()
+//                    }
+//                }
+//            }
 
-                    is BaseResponse.Success -> {
-                        stopLoading()
-                        processOtp(it.data)
-                    }
-
-                    is BaseResponse.Error -> {
-                        processError(it.msg)
-                    }
-                    else -> {
-                        stopLoading()
-                    }
-                }
-            }
-
-            binding.imgSignIn.setOnClickListener {
+            binding.clSendOtp.setOnClickListener {
                 doLogin()
 
             }
@@ -132,8 +132,8 @@ class RegisterActivity : AppCompatActivity() {
         bundle.putString("mobileNumber", mobileNumber)
         val intent = Intent(this, OTPActivity::class.java)
         intent.putExtras(bundle)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.addFlags(FLAG_ACTIVITY_NO_HISTORY)
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+//        intent.addFlags(FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)
     }
 
@@ -143,7 +143,7 @@ class RegisterActivity : AppCompatActivity() {
         val  name = binding.etName.text.toString()
         if (mobileNumber.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty()){
             viewModel.RegisterUser(name = name, username = mobileNumber, pwd = password, gender = gender, role = "admin")
-            viewModel1.ForgetPasswordUser( username = mobileNumber)
+            //viewModel1.ForgetPasswordUser( username = mobileNumber)
         }else{
             binding.etMobileNumber.error = "Enter Mobile Number"
             binding.etPassword.error = "Enter Password"
@@ -169,17 +169,18 @@ class RegisterActivity : AppCompatActivity() {
 
     fun processLogin(data: RegisterResponse?) {
         showToast("Success:" + data?.message)
-        if (!data?.data?.accessToken.isNullOrEmpty()) {
-            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
-            navigateToHome()
-        }
+        data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
+        navigateToHome()
+//        if (!data?.data?.accessToken.isNullOrEmpty()) {
+//
+//        }
     }
     fun processOtp(data: ForgotPasswordResponse?) {
         showToast("Success:" + data?.message)
-        if (!data?.message.isNullOrEmpty()) {
-            //data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
-            //navigateToHome()
-        }
+//        if (!data?.message.isNullOrEmpty()) {
+//            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
+//            navigateToHome()
+//        }
     }
 
     fun processError(msg: String?) {

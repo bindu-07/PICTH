@@ -148,9 +148,9 @@ class OTPActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         val token = SessionManager.getToken(this)
-        if (!token.isNullOrBlank()) {
-            navigateToHome()
-        }
+//        if (!token.isNullOrBlank()) {
+//            navigateToHome()
+//        }
 
         viewModel.veryfyotpResult.observe(this) {
             when (it) {
@@ -185,14 +185,14 @@ class OTPActivity : AppCompatActivity() {
                 bundle.putString("mobNo", mobNo)
                 val intent = Intent(this, ConfirmPasswordActivity::class.java)
                 intent.putExtras(bundle)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
                 startActivity(intent)
 
         } else {
             val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
             startActivity(intent)
         }
 
@@ -230,10 +230,10 @@ class OTPActivity : AppCompatActivity() {
 
     fun processLogin(data: VeryfyotpResponse?) {
         showToast("Success:" + data?.message)
-        if (!data?.message.isNullOrEmpty()) {
+//        if (!data?.message.isNullOrEmpty()) {
             //data?.message?.let { SessionManager.saveAuthToken(this, it) }
             navigateToHome()
-        }
+//        }
     }
 
     fun processError(msg: String?) {

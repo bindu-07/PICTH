@@ -27,7 +27,6 @@ class LoginActivity : AppCompatActivity() {
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         init()
-
     }
 
     private fun init(){
@@ -134,10 +133,10 @@ class LoginActivity : AppCompatActivity() {
 
     fun processLogin(data: LoginResponse?) {
         showToast("Success:" + data?.message)
-        if (data?.message == "User details fetch successfully") {
+        //if (data?.message == "User details fetch successfully") {
             data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
             navigateToHome()
-        }
+        //}
     }
 
     fun processError(msg: String?) {

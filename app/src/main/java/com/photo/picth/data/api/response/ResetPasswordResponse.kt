@@ -26,7 +26,7 @@ data class ResetPasswordResponse (
             @SerializedName("password")
             var password: String,
             @SerializedName("gender")
-            var gender: Int,
+            var gender: String,
             @SerializedName("Name")
             var name: String,
         )

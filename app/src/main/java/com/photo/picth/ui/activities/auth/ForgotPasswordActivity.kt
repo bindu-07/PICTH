@@ -91,8 +91,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
         bundle.putString("mobileNumber", mobileNumber)
         val intent = Intent(this, OTPActivity::class.java)
         intent.putExtras(bundle)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)
     }
 
@@ -125,10 +123,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     fun processLogin(data: ForgotPasswordResponse?) {
         showToast("Success:" + data?.message)
-        if (!data?.message?.isNullOrEmpty()!!) {
-            data?.message?.let { SessionManager.saveAuthToken(this, it) }
-            navigateToHome()
-        }
+        navigateToHome()
+//        if (!data?.message?.isNullOrEmpty()!!) {
+//            data?.message?.let { SessionManager.saveAuthToken(this, it) }
+//
+//        }
     }
 
     fun processError(msg: String?) {
