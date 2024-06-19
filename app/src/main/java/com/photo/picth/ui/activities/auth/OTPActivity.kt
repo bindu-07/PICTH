@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -229,7 +232,7 @@ class OTPActivity : AppCompatActivity() {
     }
 
     fun processLogin(data: VeryfyotpResponse?) {
-        showToast("Success:" + data?.message)
+        showToast("Successfully verify the otp")
 //        if (!data?.message.isNullOrEmpty()) {
             //data?.message?.let { SessionManager.saveAuthToken(this, it) }
             navigateToHome()
@@ -237,10 +240,24 @@ class OTPActivity : AppCompatActivity() {
     }
 
     fun processError(msg: String?) {
-        showToast("Error:" + msg)
+        showToast("something went wrong")
     }
 
-    fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    fun showToast(sText: String) {
+        val toast = Toast.makeText(this, sText, Toast.LENGTH_LONG)
+        var inflater: LayoutInflater = getLayoutInflater();
+        var toastRoot: View = inflater.inflate(R.layout.toast, null)
+        toast.setView(toastRoot)
+
+
+        // set a message
+        var text: TextView = toastRoot.findViewById<View>(R.id.tvToast) as TextView
+        text.setText(sText)
+
+        toast.setGravity(
+            Gravity.CENTER_HORIZONTAL or Gravity.BOTTOM,
+            0, 0)
+        toast.setDuration(Toast.LENGTH_SHORT)
+        toast.show()
     }
 }

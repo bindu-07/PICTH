@@ -3,7 +3,10 @@ package com.photo.picth.ui.activities.auth
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NO_HISTORY
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.photo.picth.R
@@ -168,8 +171,9 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun processLogin(data: RegisterResponse?) {
-        showToast("Success:" + data?.message)
+        showToast("Successfully send otp")
         data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
+        data?.data?.refreshToken?.let { SessionManager.saveRefreshToken(this, it) }
         navigateToHome()
 //        if (!data?.data?.accessToken.isNullOrEmpty()) {
 //
@@ -184,11 +188,25 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun processError(msg: String?) {
-        showToast("Error:" + msg)
+        showToast("something went wrong!")
     }
 
-    fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    fun showToast(sText: String) {
+        val toast = Toast.makeText(this, sText, Toast.LENGTH_LONG)
+        var inflater: LayoutInflater = getLayoutInflater();
+        var toastRoot: View = inflater.inflate(R.layout.toast, null)
+        toast.setView(toastRoot)
+
+
+        // set a message
+        var text: TextView = toastRoot.findViewById<View>(R.id.tvToast) as TextView
+        text.setText(sText)
+
+        toast.setGravity(
+            Gravity.CENTER_HORIZONTAL or Gravity.BOTTOM,
+            0, 0)
+        toast.setDuration(Toast.LENGTH_SHORT)
+        toast.show()
     }
 
 }

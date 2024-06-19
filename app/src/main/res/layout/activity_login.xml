@@ -19,10 +19,11 @@
         android:id="@+id/iv_app_logo"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_80sdp"
+
         android:src="@drawable/ic_app_logo"
         android:transitionName="@string/animate_logo"
-        android:layout_marginTop="@dimen/_40sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
