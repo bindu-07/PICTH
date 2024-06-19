@@ -64,7 +64,7 @@ class ConfirmPasswordActivity : AppCompatActivity() {
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
-        val token = SessionManager.getToken(this)
+        //val token = SessionManager.getToken(this)
 //        if (!token.isNullOrBlank()) {
 //            navigateToHome()
 //        }

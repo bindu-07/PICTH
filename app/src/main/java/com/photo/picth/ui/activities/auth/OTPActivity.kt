@@ -17,6 +17,7 @@ import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.databinding.ActivityOtpactivityBinding
 import com.photo.picth.ui.MainActivity
 import com.photo.picth.utils.ui.AppController
+import com.photo.picth.utils.ui.SessionManager
 import com.photo.picth.viewmodel.VeryfyotpViewModel
 
 class OTPActivity : AppCompatActivity() {
@@ -152,7 +153,7 @@ class OTPActivity : AppCompatActivity() {
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
-        val token = SessionManager.getToken(this)
+        //val token = SessionManager.getToken(this)
 //        if (!token.isNullOrBlank()) {
 //            navigateToHome()
 //        }

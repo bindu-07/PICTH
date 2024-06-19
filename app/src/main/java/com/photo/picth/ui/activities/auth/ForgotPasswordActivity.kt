@@ -14,6 +14,7 @@ import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.databinding.ActivityForgotPasswordBinding
 import com.photo.picth.utils.ui.AppController
+import com.photo.picth.utils.ui.SessionManager
 import com.photo.picth.viewmodel.ForgotPasswordViewModel
 
 class ForgotPasswordActivity : AppCompatActivity() {
@@ -59,7 +60,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
-        val token = SessionManager.getToken(this)
+        //val token = SessionManager.getToken(this)
 //        if (!token.isNullOrBlank()) {
 //            navigateToHome()
 //        }

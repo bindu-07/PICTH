@@ -29,7 +29,7 @@ class ApiRepository {
         return  ApiInterface.getApi()?.ForgotPasswordUser(forgotPasswordRequest = ForgotPasswordUser)
     }
     suspend fun LogoutUser(LogoutUser: LogoutRequest): Response<LogoutResponse>? {
-        return  UserApi.getApi()?.logoutUser(logoutRequest = LogoutUser)
+        return  ApiInterface.getApi()?.logoutUser(logoutRequest = LogoutUser)
     }
 
     suspend fun veryfyOtpUser(VeryfyotpUser: VeryfyotpRequest): Response<VeryfyotpResponse>? {

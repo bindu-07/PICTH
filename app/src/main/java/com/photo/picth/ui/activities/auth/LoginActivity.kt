@@ -15,8 +15,8 @@ import com.photo.picth.data.api.response.LoginResponse
 import com.photo.picth.databinding.ActivityLoginBinding
 import com.photo.picth.ui.MainActivity
 import com.photo.picth.utils.ui.AppController
-import com.photo.picth.utils.ui.CommonMethod.Companion.showToast
 import com.photo.picth.utils.ui.Constants
+import com.photo.picth.utils.ui.SessionManager
 import com.photo.picth.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 is BaseResponse.Error -> {
-                    processError(it.msg)
+                    showToast("something went wrong!" )
                 }
                 else -> {
                     stopLoading()
@@ -137,13 +137,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun processLogin(data: LoginResponse?) {
-        showToast(this,"Success:" + data?.message)
+        //showToast(this,"Success:" + data?.message)
         if (data?.message == "User details fetch successfully") {
             data.data.accessToken?.let {
                 AppController.mInstance.setAuth(it)
              }
             AppController.mInstance.getBoolean(Constants.IS_LOGIN)
-        showToast("Successfully login")
+            showToast("Successfully login")
         //if (data?.message == "User details fetch successfully") {
             data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
             data?.data?.refreshToken?.let { SessionManager.saveRefreshToken(this, it) }
@@ -153,11 +153,16 @@ class LoginActivity : AppCompatActivity() {
 
     fun processError(msg: String?) {
         showToast("something went wrong!" )
-        showToast(this,"Error:" + msg)
+        //showToast(this,"Error:" + msg)
     }
 
 
     fun showToast(sText: String) {
+
+    }
+}
+
+    private fun showToast(sText: String) {
         val toast = Toast.makeText(this, sText, Toast.LENGTH_LONG)
         var inflater: LayoutInflater = getLayoutInflater();
         var toastRoot: View = inflater.inflate(R.layout.toast, null)

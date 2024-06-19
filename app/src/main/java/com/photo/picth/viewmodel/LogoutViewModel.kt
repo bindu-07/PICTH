@@ -9,12 +9,12 @@ import com.photo.picth.data.api.request.LogoutRequest
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.LogoutResponse
-import com.photo.picth.repository.UserRepository
+import com.photo.picth.repository.ApiRepository
 import kotlinx.coroutines.launch
 
 class LogoutViewModel(application: Application) : AndroidViewModel(application) {
 
-    val userRepo = UserRepository()
+    val userRepo = ApiRepository()
     val logoutResult: MutableLiveData<BaseResponse<LogoutResponse>> = MutableLiveData()
 
     fun LogoutUser(refreshToken: String, accessToken: String) {

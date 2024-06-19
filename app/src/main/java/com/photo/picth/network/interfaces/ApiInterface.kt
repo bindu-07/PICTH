@@ -3,11 +3,13 @@ package com.photo.picth.network.interfaces
 import com.photo.picth.network.Injector
 import com.photo.picth.data.api.request.ForgotPasswordRequest
 import com.photo.picth.data.api.request.LoginRequest
+import com.photo.picth.data.api.request.LogoutRequest
 import com.photo.picth.data.api.request.RegisterRequest
 import com.photo.picth.data.api.request.ResetPasswordRequest
 import com.photo.picth.data.api.request.VeryfyotpRequest
 import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.LoginResponse
+import com.photo.picth.data.api.response.LogoutResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
@@ -34,6 +36,9 @@ interface ApiInterface {
 
     @POST("api/admin/reset-password")
     suspend fun resetPasswordUser(@Body resetPasswordRequest: ResetPasswordRequest): Response<ResetPasswordResponse>
+
+    @POST("/api/admin/logout")
+    suspend fun logoutUser(@Body logoutRequest: LogoutRequest): Response<LogoutResponse>
 
     @GET("api/items/all-item-category")
     suspend fun getHomeData(): Response<HomeReponseModel>

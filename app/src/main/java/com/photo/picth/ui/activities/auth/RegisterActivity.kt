@@ -16,6 +16,7 @@ import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.databinding.ActivityRegisterBinding
 import com.photo.picth.utils.ui.AppController
+import com.photo.picth.utils.ui.SessionManager
 import com.photo.picth.viewmodel.ForgotPasswordViewModel
 import com.photo.picth.viewmodel.RegisterViewModel
 
