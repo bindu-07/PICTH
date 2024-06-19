@@ -4,17 +4,15 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.photo.picth.data.api.request.ForgotPasswordRequest
 import com.photo.picth.data.api.request.VeryfyotpRequest
 import com.photo.picth.data.api.response.BaseResponse
-import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
-import com.photo.picth.repository.UserRepository
+import com.photo.picth.repository.ApiRepository
 import kotlinx.coroutines.launch
 
 class VeryfyotpViewModel(application: Application) : AndroidViewModel(application) {
 
-    val userRepo = UserRepository()
+    val userRepo = ApiRepository()
     val veryfyotpResult: MutableLiveData<BaseResponse<VeryfyotpResponse>> = MutableLiveData()
 
     fun VeryfyotpUser(username: String, otp: String) {

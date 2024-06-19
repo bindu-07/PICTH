@@ -7,12 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.photo.picth.data.api.request.ForgotPasswordRequest
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ForgotPasswordResponse
-import com.photo.picth.repository.UserRepository
+import com.photo.picth.repository.ApiRepository
 import kotlinx.coroutines.launch
 
 class ForgotPasswordViewModel(application: Application) : AndroidViewModel(application) {
 
-    val userRepo = UserRepository()
+    val userRepo = ApiRepository()
     val forgotPasswordResult: MutableLiveData<BaseResponse<ForgotPasswordResponse>> = MutableLiveData()
 
     fun ForgetPasswordUser(username: String) {

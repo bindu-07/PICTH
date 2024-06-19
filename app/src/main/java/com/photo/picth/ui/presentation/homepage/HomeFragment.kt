@@ -1,5 +1,6 @@
 package com.photo.picth.ui.presentation.homepage
 
+import CategoryAdapter
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -8,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.photo.picth.R
 import com.photo.picth.adapter.BannerAdapter
-import com.photo.picth.adapter.CategoriesAdapter
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.databinding.FragmentHomeBinding
 import com.photo.picth.ui.presentation.homepage.viewmodel.HomeViewModel
@@ -35,7 +35,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentHomeBinding.bind(view)
+      viewModel.getHome()
+
         getData()
+
         //  initUI()
 //        initObservers()
 //        findNavController().clearBackStack(R.id.homeFragment)
@@ -52,15 +55,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 is BaseResponse.Success -> {
 
                     showToast(requireActivity(), it.data.toString())
-                    binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity())
+                    binding.recyclerView.layoutManager=LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
 
-                    binding.recyclerView.adapter = it.data?.let { it1 -> CategoriesAdapter(it1) }
+                    binding.recyclerView.adapter = it.data?.let { it1 -> CategoryAdapter(it1.data.categoryItems) }
+                    hideProgress()
                 }
 
                 is BaseResponse.Error -> {
+
                     it.msg?.let { it1 -> showToast(requireActivity(), it1) }
                 }
-
                 else -> {
                     hideProgress()
                 }

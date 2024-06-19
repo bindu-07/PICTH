@@ -10,6 +10,8 @@ import android.content.res.Configuration
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Window
@@ -17,10 +19,9 @@ import android.view.WindowManager
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ProcessLifecycleOwner
-import com.photo.picth.R
-import com.photo.picth.ui.MainActivity
+
 import com.photo.picth.ui.activities.auth.LoginActivity
+import com.photo.picth.ui.activities.others.SplashActivity
 import com.photo.picth.utils.ui.Constants.Companion.AUTH_KEY
 import com.photo.picth.utils.ui.Constants.Companion.DEVICE_TOKEN
 import com.photo.picth.utils.ui.Constants.Companion.FCM_TOKEN
@@ -67,7 +68,7 @@ class AppController : Application(), LifecycleObserver {
         initializePreferences()
         initializePreferencesToken()
 
-        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+      //  ProcessLifecycleOwner.get().lifecycle.addObserver(this)
     }
 
 
@@ -75,7 +76,7 @@ class AppController : Application(), LifecycleObserver {
     fun onAppBackgrounded() {
         Log.d("MyApp", "App in background")
 
-        println("+___________ current  " + ProcessLifecycleOwner.get().lifecycle.currentState)
+      //  println("+___________ current  " + ProcessLifecycleOwner.get().lifecycle.currentState)
 
     }
 
@@ -176,15 +177,15 @@ class AppController : Application(), LifecycleObserver {
     }
 
 
-//    fun setDeviceToken(value: String) {
-//        editorToken.putString(DEVICE_TOKEN, value)
-//        editorToken.commit()
-//    }
-//
-//    // get device token
-//    fun getDeviceToken(): String {
-//        return prefToken.getString(DEVICE_TOKEN, "232376")!!
-//    }
+    fun setDeviceToken(value: String) {
+        editorToken.putString(DEVICE_TOKEN, value)
+        editorToken.commit()
+    }
+
+    // get device token
+    fun getDeviceToken(): String {
+        return prefToken.getString(DEVICE_TOKEN, "232376")!!
+    }
 
     fun setFcmToken(value: String) {
         editorToken.putString(FCM_TOKEN, value)
@@ -245,15 +246,12 @@ class AppController : Application(), LifecycleObserver {
         return preferences.getString("selectedLanguage", "")
     }
 
-
-
-
-
     fun tokenExpire() {
-        val mainIntent = Intent( MainActivity.mInstance, LoginActivity::class.java)
-        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(mainIntent)
-        MainActivity.mInstance.finishAffinity()
+        clearData()
+        AppController.mInstance.setBoolean(Constants.IS_LOGIN,false)
+        val intent = Intent(mInstance, LoginActivity::class.java)
+        startActivity(intent)
+
 
     }
 

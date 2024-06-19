@@ -20,6 +20,7 @@ import com.photo.picth.ui.presentation.homepage.HomeFragment
 import com.photo.picth.ui.presentation.message.MessageFragment
 import com.photo.picth.ui.presentation.profile.ProfileActivity
 import com.photo.picth.ui.presentation.wallet.WalletActivity
+import com.photo.picth.utils.ui.AppController
 import com.photo.picth.utils.ui.CommonMethod
 import com.photo.picth.utils.ui.startNewActivity
 
@@ -27,8 +28,6 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     val binding get() = _binding!!
     var isIndex: Int = 0
-    var mNetworkReceiver: BroadcastReceiver? = null
-    var count = 0
     private var toggle: ActionBarDrawerToggle? = null
 
     companion object {
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initUI() {
-
+        println("token=== ${AppController.mInstance.getAuth()}")
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 handleBack()
@@ -75,8 +74,10 @@ class MainActivity : AppCompatActivity() {
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
+
         binding.drawerLayout.addDrawerListener(toggle!!)
         toggle!!.syncState()
+        toggle!!.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.white)
 
         binding.navView.itemIconTintList = ContextCompat.getColorStateList(this, R.color.white)
 

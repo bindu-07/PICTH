@@ -5,16 +5,14 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.photo.picth.data.api.request.LoginRequest
-import com.photo.picth.data.api.request.RegisterRequest
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.LoginResponse
-import com.photo.picth.data.api.response.RegisterResponse
-import com.photo.picth.repository.UserRepository
+import com.photo.picth.repository.ApiRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
-    val userRepo = UserRepository()
+    val userRepo = ApiRepository()
     val loginResult: MutableLiveData<BaseResponse<LoginResponse>> = MutableLiveData()
 
     fun LoginUser(username: String, pwd: String) {
