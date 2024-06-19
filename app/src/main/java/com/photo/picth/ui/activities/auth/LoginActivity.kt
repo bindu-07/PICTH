@@ -2,7 +2,11 @@ package com.photo.picth.ui.activities.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.photo.picth.R
@@ -27,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         init()
-
     }
 
     private fun init(){
@@ -140,13 +143,35 @@ class LoginActivity : AppCompatActivity() {
                 AppController.mInstance.setAuth(it)
              }
             AppController.mInstance.getBoolean(Constants.IS_LOGIN)
+        showToast("Successfully login")
+        //if (data?.message == "User details fetch successfully") {
+            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
+            data?.data?.refreshToken?.let { SessionManager.saveRefreshToken(this, it) }
             navigateToHome()
-        }
+        //}
     }
 
     fun processError(msg: String?) {
+        showToast("something went wrong!" )
         showToast(this,"Error:" + msg)
     }
 
 
+    fun showToast(sText: String) {
+        val toast = Toast.makeText(this, sText, Toast.LENGTH_LONG)
+        var inflater: LayoutInflater = getLayoutInflater();
+        var toastRoot: View = inflater.inflate(R.layout.toast, null)
+        toast.setView(toastRoot)
+
+
+        // set a message
+        var text: TextView = toastRoot.findViewById<View>(R.id.tvToast) as TextView
+        text.setText(sText)
+
+        toast.setGravity(
+            Gravity.CENTER_HORIZONTAL or Gravity.BOTTOM,
+            0, 0)
+        toast.setDuration(Toast.LENGTH_SHORT)
+        toast.show()
+    }
 }

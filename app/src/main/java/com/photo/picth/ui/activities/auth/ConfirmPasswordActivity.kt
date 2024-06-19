@@ -1,16 +1,22 @@
 package com.photo.picth.ui.activities.auth
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.photo.picth.R
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.databinding.ActivityConfirmPasswordBinding
 import com.photo.picth.ui.MainActivity
 import com.photo.picth.utils.ui.AppController
+import com.photo.picth.utils.ui.SessionManager
 import com.photo.picth.viewmodel.ResetPasswordViewModel
 
 class ConfirmPasswordActivity : AppCompatActivity() {
@@ -58,6 +64,10 @@ class ConfirmPasswordActivity : AppCompatActivity() {
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
+        val token = SessionManager.getToken(this)
+//        if (!token.isNullOrBlank()) {
+//            navigateToHome()
+//        }
 
         viewModel.resetPasswordResult.observe(this) {
             when (it) {
@@ -89,7 +99,7 @@ class ConfirmPasswordActivity : AppCompatActivity() {
     private fun navigateToHome() {
 //        val bundle = Bundle()
 //        bundle.putString("Activity", "ForgotPasswordActivity")
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         //intent.putExtras(bundle)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
@@ -129,19 +139,33 @@ class ConfirmPasswordActivity : AppCompatActivity() {
     }
 
     fun processLogin(data: ResetPasswordResponse?) {
-        showToast("Success:" + data?.message)
-        if (!data?.data?.accessToken.isNullOrEmpty()) {
+        showToast("Successfully update your pin")
+//        if (!data?.data?.accessToken.isNullOrEmpty()) {
 //            data?.data?.accessToken?.let { SessionManager.saveAuthToken(this, it) }
             navigateToHome()
-        }
+//        }
     }
 
     fun processError(msg: String?) {
-        showToast("Error:" + msg)
+        showToast("something went wrong!")
     }
 
-    fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    fun showToast(sText: String) {
+        val toast = Toast.makeText(this, sText, Toast.LENGTH_LONG)
+        var inflater: LayoutInflater = getLayoutInflater();
+        var toastRoot: View = inflater.inflate(R.layout.toast, null)
+        toast.setView(toastRoot)
+
+
+    // set a message
+         var text: TextView = toastRoot.findViewById<View>(R.id.tvToast) as TextView
+        text.setText(sText)
+
+        toast.setGravity(
+        Gravity.CENTER_HORIZONTAL or Gravity.BOTTOM,
+        0, 0)
+        toast.setDuration(Toast.LENGTH_SHORT)
+        toast.show()
     }
 
 }

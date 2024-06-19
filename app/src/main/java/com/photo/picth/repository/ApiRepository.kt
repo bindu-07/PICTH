@@ -2,11 +2,13 @@ package com.photo.picth.repository
 
 import com.photo.picth.data.api.request.ForgotPasswordRequest
 import com.photo.picth.data.api.request.LoginRequest
+import com.photo.picth.data.api.request.LogoutRequest
 import com.photo.picth.data.api.request.RegisterRequest
 import com.photo.picth.data.api.request.ResetPasswordRequest
 import com.photo.picth.data.api.request.VeryfyotpRequest
 import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.data.api.response.LoginResponse
+import com.photo.picth.data.api.response.LogoutResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
@@ -25,6 +27,9 @@ class ApiRepository {
 
     suspend fun ForgotPasswordUser(ForgotPasswordUser: ForgotPasswordRequest): Response<ForgotPasswordResponse>? {
         return  ApiInterface.getApi()?.ForgotPasswordUser(forgotPasswordRequest = ForgotPasswordUser)
+    }
+    suspend fun LogoutUser(LogoutUser: LogoutRequest): Response<LogoutResponse>? {
+        return  UserApi.getApi()?.logoutUser(logoutRequest = LogoutUser)
     }
 
     suspend fun veryfyOtpUser(VeryfyotpUser: VeryfyotpRequest): Response<VeryfyotpResponse>? {

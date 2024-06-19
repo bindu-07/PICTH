@@ -2,10 +2,14 @@ package com.photo.picth.ui.activities.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.photo.picth.R
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.ForgotPasswordResponse
 import com.photo.picth.databinding.ActivityForgotPasswordBinding
@@ -55,6 +59,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
         if (!token.isNullOrBlank()) {
             navigateToHome()
         }
+        val token = SessionManager.getToken(this)
+//        if (!token.isNullOrBlank()) {
+//            navigateToHome()
+//        }
 
         viewModel.forgotPasswordResult.observe(this) {
             when (it) {
@@ -89,8 +97,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
         bundle.putString("mobileNumber", mobileNumber)
         val intent = Intent(this, OTPActivity::class.java)
         intent.putExtras(bundle)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)
     }
 
@@ -127,13 +133,33 @@ class ForgotPasswordActivity : AppCompatActivity() {
             data?.message?.let {  AppController.mInstance.setAuth( it) }
             navigateToHome()
         }
+        showToast("Successfully send otp")
+        navigateToHome()
+//        if (!data?.message?.isNullOrEmpty()!!) {
+//            data?.message?.let { SessionManager.saveAuthToken(this, it) }
+//
+//        }
     }
 
     fun processError(msg: String?) {
-        showToast("Error:" + msg)
+        showToast("something went wrong!" )
     }
 
-    fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    fun showToast(sText: String) {
+        val toast = Toast.makeText(this, sText, Toast.LENGTH_LONG)
+        var inflater: LayoutInflater = getLayoutInflater();
+        var toastRoot: View = inflater.inflate(R.layout.toast, null)
+        toast.setView(toastRoot)
+
+
+        // set a message
+        var text: TextView = toastRoot.findViewById<View>(R.id.tvToast) as TextView
+        text.setText(sText)
+
+        toast.setGravity(
+            Gravity.CENTER_HORIZONTAL or Gravity.BOTTOM,
+            0, 0)
+        toast.setDuration(Toast.LENGTH_SHORT)
+        toast.show()
     }
 }

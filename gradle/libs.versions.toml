@@ -79,4 +79,3 @@ ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
