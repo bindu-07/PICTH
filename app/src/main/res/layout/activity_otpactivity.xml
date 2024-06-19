@@ -21,7 +21,7 @@
         android:layout_height="@dimen/_80sdp"
         android:src="@drawable/ic_app_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,6 +77,12 @@
             android:layout_marginEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_yellow">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_dot_2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_dot_transparent" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_dot_1"
@@ -85,12 +91,6 @@
                 android:padding="@dimen/_2sdp"
                 android:src="@drawable/ic_dot_yellow" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_dot_2"
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:padding="@dimen/_2sdp"
-                android:src="@drawable/ic_dot_transparent" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_dot_3"
@@ -345,6 +345,7 @@
                         />
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/validate_otp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_3sdp"
@@ -356,6 +357,16 @@
                         app:layout_constraintEnd_toEndOf="@+id/img_sign_in"
                         app:layout_constraintStart_toStartOf="@+id/img_sign_in"
                         app:layout_constraintTop_toTopOf="@+id/img_sign_in" />
+                    <ProgressBar
+                        android:id="@+id/prgbar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
@@ -396,6 +407,8 @@
                         android:gravity="bottom"
                         android:includeFontPadding="false"
                         android:maxLines="2"
+
+
                         android:padding="@dimen/_5sdp"
                         android:text="@string/label_login_now"
                         android:textColor="@color/yellow"

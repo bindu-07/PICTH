@@ -30,7 +30,7 @@
     <string name="alert_select_music_to_continue">Please select music to continue.</string>
     <string name="androidx_startup">androidx.startup</string>
     <string name="animate_logo">animate_app_logo</string>
-    <string name="app_name">Leadr</string>
+    <string name="app_name">Pictho</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="asset_statements">[{ \"include\": \"http://leadr.in/.well-known/assetlinks.json\" }]</string>
     <string name="authentication_required">Authentication required</string>
@@ -777,4 +777,7 @@
     </string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close\n</string>
+    <string name="camera">Camera\n</string>
+    <string name="open_gallery">Gallery</string>
+    <string name="select_picture">Select Picture</string>
 </resources>

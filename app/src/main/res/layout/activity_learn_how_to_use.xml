@@ -185,16 +185,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-<!--                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView-->
-<!--                            android:id="@+id/youtube_video"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="0dp"-->
-<!--                            app:autoPlay="false"-->
-<!--                            app:enableAutomaticInitialization="false"-->
-<!--                            app:layout_constraintDimensionRatio="H,1.811:1"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:id="@+id/youtube_video"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:autoPlay="false"
+                            app:enableAutomaticInitialization="false"
+                            app:layout_constraintDimensionRatio="H,1.811:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
 
