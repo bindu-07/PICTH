@@ -14,6 +14,7 @@ import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import com.photo.picth.utils.ui.Constants
 import retrofit2.Response
 import retrofit2.http.Body
@@ -43,6 +44,8 @@ interface ApiInterface {
     @GET("api/items/all-item-category")
     suspend fun getHomeData(): Response<HomeReponseModel>
 
+    @GET("api/admin/role-details")
+    suspend fun getProfileData(): Response<ProfileModel>
 
     companion object {
         fun getApi(): ApiInterface? {

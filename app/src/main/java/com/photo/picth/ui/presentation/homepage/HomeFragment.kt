@@ -54,7 +54,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
                 is BaseResponse.Success -> {
 
-                    showToast(requireActivity(), it.data.toString())
+                   // showToast(requireActivity(), it.data.toString())
                     binding.recyclerView.layoutManager=LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
 
                     binding.recyclerView.adapter = it.data?.let { it1 -> CategoryAdapter(it1.data.categoryItems) }
