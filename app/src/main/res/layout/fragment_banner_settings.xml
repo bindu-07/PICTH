@@ -670,7 +670,6 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/til_custom_rank"
-                        style="@style/CustomInputLayoutPadding"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_8sdp"
@@ -813,7 +812,6 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/til_custom_social_name"
-                        style="@style/CustomInputLayoutPadding"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/_8sdp"

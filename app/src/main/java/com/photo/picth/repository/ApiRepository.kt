@@ -13,6 +13,7 @@ import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.network.interfaces.ApiInterface
+import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
 import com.photo.picth.ui.presentation.homepage.HomeReponseModel
 import retrofit2.Response
 
@@ -41,5 +42,8 @@ class ApiRepository {
     }
     suspend fun getHomeData(): Response<HomeReponseModel>? {
         return  ApiInterface.getApi()?.getHomeData()
+    }
+    suspend fun getTopLineImages(): Response<BannerSettingItem>? {
+        return  ApiInterface.getApi()?.getTopLineImages()
     }
 }
