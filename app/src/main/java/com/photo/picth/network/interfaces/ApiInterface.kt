@@ -44,6 +44,7 @@ interface ApiInterface {
 
     @GET("api/items/all-item-category")
     suspend fun getHomeData(): Response<HomeModelResponse>
+
     @GET("api/banner/topline-images")
     suspend fun getTopLineImages(): Response<BannerSettingItem>
 
