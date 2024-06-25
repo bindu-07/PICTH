@@ -77,25 +77,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        viewModel.logoutResult.observe(this) {
-            when (it) {
-                is BaseResponse.Loading -> {
-                    //showLoading()
-                }
-
-                is BaseResponse.Success -> {
-                    // stopLoading()
-                    processLogin(it.data)
-                }
-
-                is BaseResponse.Error -> {
-                    processError(it.msg)
-                }
-                else -> {
-                    //stopLoading()
-                }
-            }
-        }
     }
 
     private fun drawer() {
@@ -190,6 +171,26 @@ class MainActivity : AppCompatActivity() {
                 // and exit the exit
                 dialog.dismiss()
                 doLogin()
+                viewModel.logoutResult.observe(this@MainActivity) {
+                    when (it) {
+                        is BaseResponse.Loading -> {
+                            //showLoading()
+                        }
+
+                        is BaseResponse.Success -> {
+                            // stopLoading()
+                            processLogin(it.data)
+                        }
+
+                        is BaseResponse.Error -> {
+                            processError(it.msg)
+                        }
+                        else -> {
+                            //stopLoading()
+                        }
+                    }
+                }
+
             }
         })
 
@@ -239,6 +240,7 @@ class MainActivity : AppCompatActivity() {
         //if (data?.message == "User details fetch successfully") {
         //data?.message?.let { SessionManager.saveAuthToken(this, it) }
         SessionManager.clearData(this)
+        AppController.mInstance.tokenExpire()
         navigateToHome()
         //}
     }

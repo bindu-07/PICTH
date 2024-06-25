@@ -250,6 +250,7 @@ class AppController : Application(), LifecycleObserver {
         clearData()
         AppController.mInstance.setBoolean(Constants.IS_LOGIN,false)
         val intent = Intent(mInstance, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
 
 

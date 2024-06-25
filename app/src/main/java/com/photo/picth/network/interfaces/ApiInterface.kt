@@ -13,6 +13,7 @@ import com.photo.picth.data.api.response.LogoutResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
+import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
 import com.photo.picth.ui.presentation.homepage.HomeReponseModel
 import com.photo.picth.utils.ui.Constants
 import retrofit2.Response
@@ -42,6 +43,8 @@ interface ApiInterface {
 
     @GET("api/items/all-item-category")
     suspend fun getHomeData(): Response<HomeReponseModel>
+    @GET("api/banner/topline-images")
+    suspend fun getTopLineImages(): Response<BannerSettingItem>
 
 
     companion object {
