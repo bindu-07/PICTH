@@ -15,6 +15,8 @@ import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
 import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
+import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import com.photo.picth.utils.ui.Constants
 import retrofit2.Response
 import retrofit2.http.Body
@@ -45,7 +47,10 @@ interface ApiInterface {
     suspend fun getHomeData(): Response<HomeReponseModel>
     @GET("api/banner/topline-images")
     suspend fun getTopLineImages(): Response<BannerSettingItem>
+    suspend fun getHomeData(): Response<HomeModelResponse>
 
+    @GET("api/admin/role-details")
+    suspend fun getProfileData(): Response<ProfileModel>
 
     companion object {
         fun getApi(): ApiInterface? {

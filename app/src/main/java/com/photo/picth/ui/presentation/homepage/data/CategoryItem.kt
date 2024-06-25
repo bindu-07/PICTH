@@ -1,4 +1,4 @@
-package com.photo.picth.ui.presentation.homepage
+package com.photo.picth.ui.presentation.homepage.data
 
 data class CategoryItem(
     val items: List<Item>,

@@ -15,6 +15,8 @@ import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.network.interfaces.ApiInterface
 import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
 import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
+import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import retrofit2.Response
 
 class ApiRepository {
@@ -40,7 +42,11 @@ class ApiRepository {
     suspend fun resetPasswordUser(resetPasswordUser: ResetPasswordRequest): Response<ResetPasswordResponse>? {
         return  ApiInterface.getApi()?.resetPasswordUser(resetPasswordRequest = resetPasswordUser)
     }
-    suspend fun getHomeData(): Response<HomeReponseModel>? {
+
+    suspend fun getProfile(): Response<ProfileModel>? {
+        return  ApiInterface.getApi()?.getProfileData()
+    }
+    suspend fun getHomeData(): Response<HomeModelResponse>? {
         return  ApiInterface.getApi()?.getHomeData()
     }
     suspend fun getTopLineImages(): Response<BannerSettingItem>? {

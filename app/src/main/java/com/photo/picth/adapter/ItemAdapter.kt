@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.photo.picth.R
 import com.photo.picth.ui.MainActivity
 import com.photo.picth.ui.activities.bannerscreen.AchievementBannerInputActivity
-import com.photo.picth.ui.presentation.homepage.Item
+import com.photo.picth.ui.presentation.homepage.data.Item
 import com.photo.picth.utils.ui.Constants
 import com.photo.picth.utils.ui.startNewActivity
 
