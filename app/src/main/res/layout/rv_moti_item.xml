@@ -11,7 +11,7 @@
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgProfile"
+            android:id="@+id/imageViewSpecial"
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_60sdp"
             android:layout_centerVertical="true"
@@ -19,6 +19,7 @@
             android:src="@drawable/ic_profile"
             android:theme="@style/ImageCircle" />
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="New Motivational"

@@ -6,6 +6,8 @@
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/abc_action_bar_content_inset_material"
     android:tag="layout/activity_login_0">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -13,16 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/splash_background_512" />
+        android:src="@drawable/bg1" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_app_logo"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_80sdp"
+
         android:src="@drawable/ic_app_logo"
         android:transitionName="@string/animate_logo"
-        android:layout_marginTop="@dimen/_40sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -96,8 +99,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scrollbars="none"
-
+            android:layout_marginTop="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:animateLayoutChanges="true"
             app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
             app:layout_constraintStart_toStartOf="@+id/tv_login_services"
             app:layout_constraintTop_toBottomOf="@+id/tv_login_services">
@@ -128,15 +132,14 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_number"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
                     app:boxStrokeErrorColor="@color/yellow"
                     app:errorIconTint="@color/yellow"
                     app:errorTextColor="@color/yellow"
                     app:hintAnimationEnabled="false"
-                    app:hintEnabled="true"
+                    app:hintEnabled="false"
+
                     android:layout_marginTop="18dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -145,16 +148,14 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_mobile_number"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
-                        android:fontFamily="@font/poppins_regular"
                         android:hint="@string/label_enter_mobile"
                         android:inputType="number"
                         android:maxLength="10"
                         android:layout_marginEnd="12dp"
-                        android:tag="binding_1"
                         android:textColor="@color/white"
-                        android:textColorHint="@color/light_white_50"
+                        android:textColorHint="@color/white"
                         android:textCursorDrawable="@color/white"
                         android:textSize="@dimen/_13ssp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -189,7 +190,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_password"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -197,7 +197,7 @@
                     app:errorIconTint="@color/yellow"
                     app:errorTextColor="@color/yellow"
                     app:hintAnimationEnabled="false"
-                    app:hintEnabled="true"
+                    app:hintEnabled="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/label_password"
@@ -206,7 +206,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_password"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/label_enter_password"
@@ -216,7 +216,7 @@
                         android:tag="binding_2"
                         android:layout_marginEnd="12dp"
                         android:textColor="@color/white"
-                        android:textColorHint="@color/light_white_50"
+                        android:textColorHint="@color/white"
                         android:textCursorDrawable="@color/white"
                         android:textSize="@dimen/_13ssp"
                         app:layout_constraintEnd_toEndOf="@+id/tv_login_services"
@@ -306,6 +306,7 @@
                         tools:ignore="MissingConstraints" />
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/label_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_3sdp"
@@ -317,6 +318,16 @@
                         app:layout_constraintEnd_toEndOf="@+id/img_sign_in"
                         app:layout_constraintStart_toStartOf="@+id/img_sign_in"
                         app:layout_constraintTop_toTopOf="@+id/img_sign_in" />
+                    <ProgressBar
+                        android:id="@+id/prgbar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout

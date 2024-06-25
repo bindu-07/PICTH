@@ -4,6 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/abc_action_bar_content_inset_material"
+
     android:layout_height="match_parent"
     android:tag="layout/activity_no_internet_0">
 
@@ -12,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/splash_background_512" />
+        android:src="@drawable/bg1" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_no_internet"

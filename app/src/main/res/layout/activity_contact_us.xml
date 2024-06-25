@@ -7,6 +7,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/abc_action_bar_content_inset_material"
+
     android:tag="layout/activity_contact_us_0">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -14,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/splash_background_512" />
+        android:src="@drawable/bg1" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_app_logo"
@@ -124,7 +127,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_name"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -140,7 +142,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_name"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:digits="@string/label_allowed_digits"
                         android:fontFamily="@font/poppins_regular"
@@ -189,7 +191,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_number"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -205,7 +206,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_mobile_number"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/label_enter_mobile"
@@ -249,6 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
+                        android:visibility="gone"
                         android:orientation="horizontal">
 
                         <com.google.android.material.imageview.ShapeableImageView
@@ -401,7 +403,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_company_name"
-                    style="@style/CustomInputLayoutPadding"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -417,7 +418,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_company_name"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
+                        android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/label_enter_company"

@@ -4,6 +4,8 @@ class Constants {
 
       companion object {
 
+            const val BASE_URL: String="https://pictho.xyz/backend/"
+            const val IMAGEBASE_URL: String="https://pictho.xyz/backend/"
             const val DEVICE_TOKEN = "device_token"
             const val FCM_TOKEN = "fcm_token"
             const val DEVICE_TYPE = "2"

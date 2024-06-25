@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginRight="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,25 +12,26 @@
         tools:ignore="MissingConstraints">
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/_150sdp"
+            android:layout_height="@dimen/_100sdp"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="@dimen/_150sdp"
-                android:layout_height="@dimen/_150sdp"
+                android:id="@+id/imageViewSpecial"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
                 android:layout_centerVertical="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_profile"
                 android:theme="@style/ImageCircle" />
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_150sdp"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="@dimen/_100sdp"
                 android:layout_alignParentBottom="true"
                 >
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
                     android:scaleType="fitXY"
                     android:src="@drawable/banner2"/>
@@ -39,6 +40,7 @@
 
         </RelativeLayout>
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Summer Banner"
