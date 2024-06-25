@@ -6,14 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.repository.ApiRepository
-import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
 import com.photo.picth.utils.ui.AppController
 import kotlinx.coroutines.launch
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     val userRepo = ApiRepository()
-    val homeResult: MutableLiveData<BaseResponse<HomeReponseModel>> = MutableLiveData()
+    val homeResult: MutableLiveData<BaseResponse<HomeModelResponse>> = MutableLiveData()
     private var isDataFetched = false
 
     fun getHome(){

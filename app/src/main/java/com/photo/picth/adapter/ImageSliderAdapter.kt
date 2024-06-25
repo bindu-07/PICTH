@@ -1,49 +1,35 @@
-package com.photo.picth.adapter;
+package com.photo.picth.adapter
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.photo.picth.R
+import com.photo.picth.ui.presentation.homepage.data.SlideBanner
+import com.photo.picth.utils.ui.Constants
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+class ImageSliderAdapter(context: FragmentActivity, private val images: List<SlideBanner>) : RecyclerView.Adapter<ImageSliderAdapter.ViewHolder>() {
 
-import com.photo.picth.R;
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
 
-public class ImageSliderAdapter extends RecyclerView.Adapter<ImageSliderAdapter.ViewHolder> {
-
-    private final int[] images;
-    private final LayoutInflater inflater;
-
-    public ImageSliderAdapter(Context context, int[] images) {
-        this.images = images;
-        this.inflater = LayoutInflater.from(context);
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = inflater.inflate(R.layout.rv_item, parent, false)
+        return ViewHolder(view)
     }
 
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.rv_item, parent, false);
-        return new ViewHolder(view);
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        // Assuming images list contains objects of type Item and Item has a method or property to get the image resource
+       // holder.imageView.setImageResource(images[position].imageUrl)
+        Glide.with(holder.itemView.context).load(Constants.IMAGEBASE_URL + images[position].imageUrl).into(holder.imageView)
+
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.imageView.setImageResource(images[position]);
-    }
+    override fun getItemCount(): Int = images.size
 
-    @Override
-    public int getItemCount() {
-        return images.length;
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        final ImageView imageView;
-
-        ViewHolder(View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.imgSliderbaner);
-        }
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.imgSliderbaner)
     }
 }

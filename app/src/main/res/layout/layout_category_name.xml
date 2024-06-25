@@ -11,27 +11,14 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
-            android:layout_weight="1" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
-
         <TextView
             android:id="@+id/tvCategoryName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:text="Stories"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
             android:textColor="@color/white"
             android:textSize="@dimen/_16sdp"
             tools:ignore="MissingConstraints" />
@@ -40,7 +27,10 @@
             android:id="@+id/rvItems"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false" />
+            android:paddingStart="@dimen/_16sdp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            tools:ignore="RtlSymmetry" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

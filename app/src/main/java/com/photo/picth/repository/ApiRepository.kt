@@ -13,7 +13,7 @@ import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.network.interfaces.ApiInterface
-import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
 import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import retrofit2.Response
 
@@ -44,7 +44,7 @@ class ApiRepository {
     suspend fun getProfile(): Response<ProfileModel>? {
         return  ApiInterface.getApi()?.getProfileData()
     }
-    suspend fun getHomeData(): Response<HomeReponseModel>? {
+    suspend fun getHomeData(): Response<HomeModelResponse>? {
         return  ApiInterface.getApi()?.getHomeData()
     }
 }

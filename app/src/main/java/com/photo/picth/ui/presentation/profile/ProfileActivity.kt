@@ -2,6 +2,7 @@ package com.photo.picth.ui.presentation.profile
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -39,8 +40,9 @@ class ProfileActivity : AppCompatActivity(R.layout.activity_profile) {
         getData()
 
     }
-    fun init() {
+    private fun init() {
         binding.ivBack.setOnClickListener {
+            Toast.makeText(this,"sdfhdhhdhdf",Toast.LENGTH_SHORT).show()
             finish()
         }
     }

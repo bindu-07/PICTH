@@ -34,6 +34,7 @@ import com.photo.picth.ui.presentation.profile.ProfileActivity
 import com.photo.picth.ui.presentation.wallet.WalletActivity
 import com.photo.picth.utils.ui.AppController
 import com.photo.picth.utils.ui.CommonMethod
+import com.photo.picth.utils.ui.CommonMethod.Companion.openWhatsAppWithMessage
 import com.photo.picth.utils.ui.SessionManager
 import com.photo.picth.utils.ui.startNewActivity
 import com.photo.picth.viewmodel.LoginViewModel
@@ -148,7 +149,10 @@ class MainActivity : AppCompatActivity() {
                 // Handle the action
                 startNewActivity(LearnHowToUseActivity::class.java)
             }
-
+            if (id == R.id.nav_Connecct) {
+                // Handle the action
+                openWhatsAppWithMessage(this, "Connect with us")
+            }
             if (id == R.id.nav_pass) {
                 // Handle the action
                 startNewActivity(ForgotPasswordActivity::class.java)

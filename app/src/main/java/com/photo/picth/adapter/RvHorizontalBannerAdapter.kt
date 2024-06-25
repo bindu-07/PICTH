@@ -7,7 +7,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.photo.picth.R
-import com.photo.picth.ui.presentation.homepage.Item
+import com.photo.picth.ui.presentation.homepage.data.Item
 import com.photo.picth.utils.ui.Constants
 
 class RvHorizontalBannerAdapter(private val items: List<Item>) : RecyclerView.Adapter<RvHorizontalBannerAdapter.CircleViewHolder>() {

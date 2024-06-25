@@ -13,7 +13,7 @@ import com.photo.picth.data.api.response.LogoutResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
-import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
 import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import com.photo.picth.utils.ui.Constants
 import retrofit2.Response
@@ -42,7 +42,7 @@ interface ApiInterface {
     suspend fun logoutUser(@Body logoutRequest: LogoutRequest): Response<LogoutResponse>
 
     @GET("api/items/all-item-category")
-    suspend fun getHomeData(): Response<HomeReponseModel>
+    suspend fun getHomeData(): Response<HomeModelResponse>
 
     @GET("api/admin/role-details")
     suspend fun getProfileData(): Response<ProfileModel>

@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.repository.ApiRepository
-import com.photo.picth.ui.presentation.homepage.HomeReponseModel
 import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import kotlinx.coroutines.launch
 
