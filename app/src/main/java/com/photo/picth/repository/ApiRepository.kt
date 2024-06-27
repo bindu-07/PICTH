@@ -13,8 +13,10 @@ import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.network.interfaces.ApiInterface
-import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
-import com.photo.picth.ui.presentation.homepage.HomeReponseModel
+import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingItem
+import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingRequest
+import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingResponse
 import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
 import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import retrofit2.Response
@@ -43,6 +45,10 @@ class ApiRepository {
         return  ApiInterface.getApi()?.resetPasswordUser(resetPasswordRequest = resetPasswordUser)
     }
 
+    suspend fun updateSettingUser(updateSettingUser: UpdateBannerSettingRequest): Response<UpdateBannerSettingResponse>? {
+        return  ApiInterface.getApi()?.updateSetting(updateBannerSettingRequest = updateSettingUser)
+    }
+
     suspend fun getProfile(): Response<ProfileModel>? {
         return  ApiInterface.getApi()?.getProfileData()
     }
@@ -51,5 +57,9 @@ class ApiRepository {
     }
     suspend fun getTopLineImages(): Response<BannerSettingItem>? {
         return  ApiInterface.getApi()?.getTopLineImages()
+    }
+
+    suspend fun getBannerSettings(): Response<BannerSettingResponse>? {
+        return  ApiInterface.getApi()?.getBannerSettings()
     }
 }

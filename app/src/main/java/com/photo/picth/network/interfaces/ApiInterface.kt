@@ -13,7 +13,10 @@ import com.photo.picth.data.api.response.LogoutResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
-import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
+import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingItem
+import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingRequest
+import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingResponse
 import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
 import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import com.photo.picth.utils.ui.Constants
@@ -21,6 +24,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface ApiInterface {
 
@@ -39,8 +43,11 @@ interface ApiInterface {
     @POST("api/admin/reset-password")
     suspend fun resetPasswordUser(@Body resetPasswordRequest: ResetPasswordRequest): Response<ResetPasswordResponse>
 
-    @POST("/api/admin/logout")
+    @POST("api/admin/logout")
     suspend fun logoutUser(@Body logoutRequest: LogoutRequest): Response<LogoutResponse>
+
+    @PUT("api/banner/banner-setting")
+    suspend fun updateSetting(@Body updateBannerSettingRequest: UpdateBannerSettingRequest): Response<UpdateBannerSettingResponse>
 
     @GET("api/items/all-item-category")
     suspend fun getHomeData(): Response<HomeModelResponse>
@@ -50,6 +57,9 @@ interface ApiInterface {
 
     @GET("api/admin/role-details")
     suspend fun getProfileData(): Response<ProfileModel>
+
+    @GET("api/banner/banner-setting")
+    suspend fun getBannerSettings(): Response<BannerSettingResponse>
 
     companion object {
         fun getApi(): ApiInterface? {

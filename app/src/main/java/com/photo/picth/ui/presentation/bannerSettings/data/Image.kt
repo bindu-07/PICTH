@@ -1,4 +1,4 @@
-package com.photo.picth.ui.presentation.bannerSettings
+package com.photo.picth.ui.presentation.bannerSettings.data
 
 data class Image (
     val path: String,

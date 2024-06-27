@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
 import com.photo.picth.R
 import com.photo.picth.adapter.BottomBannerAdapter
-import com.photo.picth.adapter.CircleAdapter
 import com.photo.picth.adapter.ImageSliderAdapter
 import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.databinding.FragmentHomeBinding
