@@ -7,9 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.photo.picth.R
-import com.photo.picth.ui.presentation.bannerSettings.BannerSettingData
-import com.photo.picth.ui.presentation.bannerSettings.BannerSettingItem
-import com.photo.picth.ui.presentation.bannerSettings.Image
+import com.photo.picth.ui.presentation.bannerSettings.data.Image
 import com.photo.picth.utils.ui.Constants
 
 class BannerSettingsTopUplineItemAdapter(private val items: List<Image>) : RecyclerView.Adapter<BannerSettingsTopUplineItemAdapter.BannerSettingsHolder>() {

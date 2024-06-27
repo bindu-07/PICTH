@@ -2,6 +2,7 @@ package com.photo.picth.ui.presentation.bannerSettings
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -14,8 +15,12 @@ import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.databinding.ActivityMainBinding
 import com.photo.picth.databinding.FragmentBannerSettingsBinding
 import com.photo.picth.databinding.FragmentMessageBinding
+import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingRequest
+import com.photo.picth.ui.presentation.bannerSettings.viewmodel.BannerSettingsResponseViewModel
 import com.photo.picth.ui.presentation.bannerSettings.viewmodel.BannerSettingsViewModel
 import com.photo.picth.ui.presentation.homepage.viewmodel.HomeViewModel
+import com.photo.picth.ui.presentation.profile.model.ProfileModel
 import com.photo.picth.utils.ui.CommonMethod
 import com.photo.picth.utils.ui.ProgressUtil
 import com.photo.picth.viewmodel.LoginViewModel
@@ -30,10 +35,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [BannerSettingsActivity.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BannerSettingsActivity : AppCompatActivity() {
+class BannerSettingsActivity : AppCompatActivity(R.layout.fragment_banner_settings) {
 
     private var _binding: FragmentBannerSettingsBinding? = null
     private val viewModel by viewModels<BannerSettingsViewModel>()
+    private val viewModel1 by viewModels<BannerSettingsResponseViewModel>()
     val binding get() = _binding!!
     private var rankBanners = false
     private var achivementBanners = false
@@ -55,8 +61,11 @@ class BannerSettingsActivity : AppCompatActivity() {
         supportActionBar!!.hide()
         _binding = FragmentBannerSettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initView()
+        viewModel1.getBannerSettings()
+        viewModel.getImages()
         getTopImages()
+        getData()
+        initView()
 
     }
 
@@ -168,13 +177,86 @@ class BannerSettingsActivity : AppCompatActivity() {
             }
         }
 
-        binding.clOne.setOnClickListener(
-            View.OnClickListener {
-                if (socialNames) {
-                    socialCustomName = binding.tilCustomSocialName.editText!!.text.toString()
+//        binding.clOne.setOnClickListener(
+//            View.OnClickListener {
+//                if (socialNames) {
+//                    socialCustomName = binding.tilCustomSocialName.editText!!.text.toString()
+//                }
+//            }`
+//        )
+
+        binding.clSave.setOnClickListener {
+
+              bannersRankName = binding.etRankName.text.toString()
+              socialCustomName = binding.etSocialName.text.toString()
+            val updateBannerSettingRequest = UpdateBannerSettingRequest(
+                mentorImage = "path_to_image",
+                rankBanners = rankBanners,
+                achivementBanners = achivementBanners,
+                bonanzaBanners = bonanzaBanners,
+                cappingBanners = cappingBanners,
+                teamLogo = teamLogo,
+                successSystem = successSystem,
+                bannersNumber = bannersNumber,
+                mobileNumber = mobileNumber,
+                bannersRank = bannersRank,
+                bannersRankName = bannersRankName,
+                socialNames = socialNames,
+                socialCustomName = socialCustomName,
+                mentarName = "",
+                mentarRole = ""
+            )
+
+            viewModel.updateSettingUser(updateBannerSettingRequest)
+        }
+
+    }
+
+    private fun getData() {
+        viewModel1.homeResult.observe(this) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    ProgressUtil.showProgress(this)
+                }
+
+                is BaseResponse.Success -> {
+
+                    CommonMethod.showToast(this, it.data.toString())
+                    setData(it.data)
+                    ProgressUtil.hideProgress()
+                }
+
+                is BaseResponse.Error -> {
+
+                    it.msg?.let { it1 -> CommonMethod.showToast(this, it1) }
+                }
+                else -> {
+                    ProgressUtil.hideProgress()
                 }
             }
-        )
+        }
+
+            viewModel.updateSettingResult.observe(this) {
+                when (it) {
+                    is BaseResponse.Loading -> {
+                        ProgressUtil.showProgress(this)
+                    }
+
+                    is BaseResponse.Success -> {
+
+                        CommonMethod.showToast(this, it.data.toString())
+                        ProgressUtil.hideProgress()
+                    }
+
+                    is BaseResponse.Error -> {
+
+                        it.msg?.let { it1 -> CommonMethod.showToast(this, it1) }
+                    }
+                    else -> {
+                        ProgressUtil.hideProgress()
+                    }
+                }
+            }
 
     }
     fun getTopImages() {
@@ -190,6 +272,7 @@ class BannerSettingsActivity : AppCompatActivity() {
                     binding.rvTopUplines.layoutManager=
                         LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+                    binding.imageOne
                     binding.rvTopUplines.adapter = it.data?.let { it1 -> BannerSettingsTopUplineItemAdapter(it1.data.images) }
                     ProgressUtil.hideProgress()
                 }
@@ -203,6 +286,39 @@ class BannerSettingsActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun setData(data: BannerSettingResponse?) {
+        //val languages = data!!.data.languages.map { it.language }
+        val roles = data?.data?.roles?.map { it.role }
+         rankBanners = data?.data?.bannerSetting!!.rankBanners
+
+         achivementBanners = data.data.bannerSetting.achivementBanners
+         bonanzaBanners = data.data.bannerSetting.bonanzaBanners
+         cappingBanners = data.data.bannerSetting.cappingBanners
+
+         teamLogo = data.data.bannerSetting.teamLogo.teamLogo
+         successSystem = data.data.bannerSetting.teamLogo.successSystem
+
+         bannersNumber = data.data.bannerSetting.bannersNumber.bannersNumber
+         mobileNumber = data.data.bannerSetting.bannersNumber.mobileNumber
+
+         bannersRank = data.data.bannerSetting.bannersRank.bannersRank
+         socialNames = data.data.bannerSetting.socialNames.socialNames
+
+
+
+//        val languageAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, languages)
+//        languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        binding.spinnerLanguage.adapter = languageAdapter
+//
+//        val roleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roles)
+//        roleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        binding.spinnerNamePrefix.adapter = roleAdapter
+//
+//        val typeAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, types)
+//        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        binding.spinnerRank.adapter = typeAdapter
     }
 
 }
