@@ -3,8 +3,6 @@ package com.photo.picth.ui.presentation.bannerSettings.data
 import com.google.gson.annotations.SerializedName
 
 data class UpdateBannerSettingRequest (
-    @SerializedName("mentorImage")
-    var mentorImage: String,
     @SerializedName("rankBanners")
     var rankBanners: Boolean,
     @SerializedName("achivementBanners")
@@ -29,9 +27,5 @@ data class UpdateBannerSettingRequest (
     var socialNames: Boolean,
     @SerializedName("socialCustomName")
     var socialCustomName: String,
-    @SerializedName("mentarName")
-    var mentarName: String,
-    @SerializedName("mentarRole")
-    var mentarRole: String,
 
 )

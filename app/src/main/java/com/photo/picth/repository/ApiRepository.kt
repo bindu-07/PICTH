@@ -13,8 +13,13 @@ import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
 import com.photo.picth.network.interfaces.ApiInterface
+import com.photo.picth.ui.presentation.bannerSettings.data.AddMentorRequest
+import com.photo.picth.ui.presentation.bannerSettings.data.AddMentorResponse
 import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingItem
 import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.ImageUpload
+import com.photo.picth.ui.presentation.bannerSettings.data.ImageUploadResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.MentorResponse
 import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingRequest
 import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingResponse
 import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
@@ -49,6 +54,14 @@ class ApiRepository {
         return  ApiInterface.getApi()?.updateSetting(updateBannerSettingRequest = updateSettingUser)
     }
 
+    suspend fun uploadTopLineImage(imageUpload: ImageUpload): Response<ImageUploadResponse>? {
+        return  ApiInterface.getApi()?.topLineImagesUpload(imageUpload = imageUpload)
+    }
+
+    suspend fun addMentor(addMentorRequest: AddMentorRequest): Response<AddMentorResponse>? {
+        return  ApiInterface.getApi()?.addMentor(addMentorRequest = addMentorRequest)
+    }
+
     suspend fun getProfile(): Response<ProfileModel>? {
         return  ApiInterface.getApi()?.getProfileData()
     }
@@ -61,5 +74,9 @@ class ApiRepository {
 
     suspend fun getBannerSettings(): Response<BannerSettingResponse>? {
         return  ApiInterface.getApi()?.getBannerSettings()
+    }
+
+    suspend fun getMentorData(): Response<MentorResponse>? {
+        return  ApiInterface.getApi()?.getMentor()
     }
 }

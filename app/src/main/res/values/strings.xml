@@ -523,7 +523,7 @@
     <string name="label_show_contact_number_on_banners">Show Contact No. on banners</string>
     <string name="label_show_custom_rank_website">Show custom Rank on website</string>
     <string name="label_show_custom_team_logo">Show #CustomTeamLogoName</string>
-    <string name="label_show_default_logoname">Show #DefaultLogoName</string>
+    <string name="label_show_default_logoname">Show Fighter success System</string>
     <string name="label_show_rank_on_banner">Show Rank on banners</string>
     <string name="label_show_social_name_on_banner">Show Social Name on banners</string>
     <string name="label_show_team_logo">Show Team Logo</string>

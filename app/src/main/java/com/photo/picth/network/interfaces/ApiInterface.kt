@@ -13,9 +13,14 @@ import com.photo.picth.data.api.response.LogoutResponse
 import com.photo.picth.data.api.response.RegisterResponse
 import com.photo.picth.data.api.response.ResetPasswordResponse
 import com.photo.picth.data.api.response.VeryfyotpResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.AddMentorRequest
+import com.photo.picth.ui.presentation.bannerSettings.data.AddMentorResponse
 import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingItem
 import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingRequest
 import com.photo.picth.ui.presentation.bannerSettings.data.BannerSettingResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.ImageUpload
+import com.photo.picth.ui.presentation.bannerSettings.data.ImageUploadResponse
+import com.photo.picth.ui.presentation.bannerSettings.data.MentorResponse
 import com.photo.picth.ui.presentation.bannerSettings.data.UpdateBannerSettingResponse
 import com.photo.picth.ui.presentation.homepage.data.HomeModelResponse
 import com.photo.picth.ui.presentation.profile.model.ProfileModel
@@ -49,6 +54,11 @@ interface ApiInterface {
     @PUT("api/banner/banner-setting")
     suspend fun updateSetting(@Body updateBannerSettingRequest: UpdateBannerSettingRequest): Response<UpdateBannerSettingResponse>
 
+    @PUT("api/banner/bannersettingimage")
+    suspend fun topLineImagesUpload(@Body imageUpload: ImageUpload): Response<ImageUploadResponse>
+    @PUT("api/banner/banner-setting-addmentor")
+    suspend fun addMentor(@Body addMentorRequest: AddMentorRequest): Response<AddMentorResponse>
+
     @GET("api/items/all-item-category")
     suspend fun getHomeData(): Response<HomeModelResponse>
 
@@ -60,6 +70,9 @@ interface ApiInterface {
 
     @GET("api/banner/banner-setting")
     suspend fun getBannerSettings(): Response<BannerSettingResponse>
+
+    @GET("api/banner/banner-setting-getmentor")
+    suspend fun getMentor(): Response<MentorResponse>
 
     companion object {
         fun getApi(): ApiInterface? {

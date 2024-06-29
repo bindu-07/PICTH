@@ -190,14 +190,25 @@
                     android:layout_marginHorizontal="@dimen/_5sdp"
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginRight="@dimen/_5sdp"
                     android:orientation="vertical"
                     android:tag="binding_1"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/topimage_upload"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_refresh"
                     app:spanCount="5" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/topimage_upload"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_login"
+                    android:src="@drawable/ic_add_image"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/rv_top_uplines"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_refresh" />
+
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/label_profile_images"
@@ -458,6 +469,7 @@
                             <RadioButton
                                 android:id="@+id/rb_custom_logo_name"
                                 android:layout_width="wrap_content"
+                                android:visibility="gone"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/_minus4sdp"
                                 android:backgroundTint="@color/yellow"
@@ -556,6 +568,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/_minus4sdp"
+                                android:buttonTint="@color/yellow"
                                 android:backgroundTint="@color/yellow"
                                 android:fontFamily="@font/poppins_regular"
                                 android:includeFontPadding="false"
@@ -639,6 +652,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/_minus4sdp"
+                                android:buttonTint="@color/yellow"
                                 android:backgroundTint="@color/yellow"
                                 android:fontFamily="@font/poppins_regular"
                                 android:includeFontPadding="false"
@@ -781,6 +795,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/_minus4sdp"
+
                                 android:buttonTint="@color/yellow"
                                 android:fontFamily="@font/poppins_regular"
                                 android:includeFontPadding="false"

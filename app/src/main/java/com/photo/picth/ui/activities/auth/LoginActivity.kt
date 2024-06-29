@@ -14,6 +14,7 @@ import com.photo.picth.data.api.response.BaseResponse
 import com.photo.picth.data.api.response.LoginResponse
 import com.photo.picth.databinding.ActivityLoginBinding
 import com.photo.picth.ui.MainActivity
+import com.photo.picth.ui.presentation.bannerSettings.BannerSettingsActivity
 import com.photo.picth.utils.ui.AppController
 import com.photo.picth.utils.ui.Constants
 import com.photo.picth.utils.ui.SessionManager
@@ -102,7 +103,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun navigateToHome() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, BannerSettingsActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)

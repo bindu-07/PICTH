@@ -26,11 +26,12 @@ class BannerSettingsTopUplineItemAdapter(private val items: List<Image>) : Recyc
     override fun onBindViewHolder(holder: BannerSettingsHolder, position: Int) {
         val item = items[position]
 //        holder.tvtitle.text=item.title
-        Glide.with(holder.itemView.context).load(Constants.IMAGEBASE_URL + item.path).into(holder.ivItemImage)
+        Glide.with(holder.itemView.context).load(item.path).into(holder.ivItemImage)
 //        holder.itemView.setOnClickListener {
 //            MainActivity.mInstance.startNewActivity(AchievementBannerInputActivity::class.java)
 //
 //        }
+        
     }
 
     override fun getItemCount(): Int = items.size

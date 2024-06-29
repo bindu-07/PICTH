@@ -12,7 +12,7 @@ data class BannerSetting (
     val bannersNumber: BannersNumber,
     val bannersRank: BannersRank,
     val socialNames: SocialNames,
-    val mentor: List<Mentor>,
+    //val mentor: List<Mentor>,
 
 
 )
